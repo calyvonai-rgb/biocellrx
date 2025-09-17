@@ -26,9 +26,12 @@ export default defineConfig(({ mode }) => ({
           vendor: ['react', 'react-dom'],
           ui: ['@/components/ui/button', '@/components/ui/card', '@/components/ui/badge'],
           router: ['react-router-dom'],
+          icons: ['lucide-react'],
         },
       },
     },
+    // Enable chunk compression
+    chunkSizeWarningLimit: 1000,
     // Enable source maps for debugging but optimize for production
     sourcemap: mode === 'development',
     // Minify using esbuild for better performance

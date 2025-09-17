@@ -152,41 +152,17 @@ const Features = () => {
           </div>
         </div>
         
-        {/* Why Choose BioCellRx Image with Captivating Effects */}
-        <div className="max-w-6xl mx-auto relative">
-          <div className="relative overflow-hidden rounded-2xl group">
-            {/* Background glow effect */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-medical-gold/20 via-medical-gold/40 to-medical-gold/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-1000 animate-pulse"></div>
-            
-            {/* Floating particles */}
-            <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
-              <div className="particle absolute w-2 h-2 bg-medical-gold rounded-full opacity-0 group-hover:opacity-100 animate-float-1"></div>
-              <div className="particle absolute w-1 h-1 bg-medical-gold-light rounded-full opacity-0 group-hover:opacity-100 animate-float-2"></div>
-              <div className="particle absolute w-1.5 h-1.5 bg-medical-gold rounded-full opacity-0 group-hover:opacity-100 animate-float-3"></div>
-              <div className="particle absolute w-1 h-1 bg-medical-gold-light rounded-full opacity-0 group-hover:opacity-100 animate-float-4"></div>
-              <div className="particle absolute w-2 h-2 bg-medical-gold/80 rounded-full opacity-0 group-hover:opacity-100 animate-float-5"></div>
-            </div>
-            
-            {/* Shimmer overlay */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-2000 ease-out"></div>
-            </div>
-            
-            {/* Enhanced border glow */}
-            <div className="absolute inset-0 rounded-2xl border-2 border-medical-gold/30 group-hover:border-medical-gold/80 transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(255,215,0,0.5)]"></div>
-            
-            <img 
-              src={whyChooseImage} 
-              alt="Why Choose BioCellRx - Industry-leading cellular products backed by two decades of research and development in stem cell therapeutics"
-              className="w-full h-auto rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-2xl group-hover:scale-[1.02] relative z-10"
-            />
-            
-            {/* Corner accent lights */}
-            <div className="absolute top-4 left-4 w-3 h-3 bg-medical-gold rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 animate-pulse delay-100"></div>
-            <div className="absolute top-4 right-4 w-3 h-3 bg-medical-gold rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 animate-pulse delay-200"></div>
-            <div className="absolute bottom-4 left-4 w-3 h-3 bg-medical-gold rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 animate-pulse delay-300"></div>
-            <div className="absolute bottom-4 right-4 w-3 h-3 bg-medical-gold rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 animate-pulse delay-500"></div>
-          </div>
+        {/* Why Choose BioCellRx Image */}
+        <div className="max-w-6xl mx-auto">
+          <img 
+            src={whyChooseImage} 
+            alt="Why Choose BioCellRx - Industry-leading cellular products backed by two decades of research and development in stem cell therapeutics"
+            className="w-full h-auto rounded-2xl shadow-lg"
+            style={{ 
+              filter: 'contrast(1.1) brightness(1.05) saturate(1.1)',
+              imageRendering: 'auto'
+            }}
+          />
         </div>
       </div>
     </section>

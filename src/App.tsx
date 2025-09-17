@@ -8,7 +8,7 @@ import { HelmetProvider } from "react-helmet-async";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import CookieConsent from "@/components/CookieConsent";
 import Analytics from "@/components/Analytics";
-import FloatingStemCells from "@/components/FloatingStemCells";
+
 import RedirectHandler from "./components/RedirectHandler";
 import { setupGlobalErrorHandling } from "./utils/errorHandler";
 import Index from "./pages/Index";
@@ -55,7 +55,7 @@ const App = () => {
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
-                <FloatingStemCells />
+                
                 <CookieConsent />
                 <Analytics />
               </RedirectHandler>

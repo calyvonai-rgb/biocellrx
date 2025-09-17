@@ -42,7 +42,7 @@ const Navigation = () => {
               <div className="sparkle-effect sparkle-3"></div>
               <div className="sparkle-effect sparkle-4"></div>
             </div>
-            <span className="brand-text-glow text-base sm:text-xl font-bold relative">
+            <span className="text-base sm:text-xl font-bold text-foreground">
               BioCellRx
             </span>
           </Link>
