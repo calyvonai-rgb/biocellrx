@@ -285,4 +285,89 @@ All colors MUST be HSL.
   .video-container {
     overflow: hidden;
   }
+  
+  /* Logo Glistening Effects */
+  .logo-container {
+    @apply relative overflow-hidden;
+  }
+  
+  .logo-shimmer {
+    @apply relative;
+  }
+  
+  .logo-shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 215, 0, 0.4),
+      rgba(255, 215, 0, 0.7),
+      rgba(255, 215, 0, 0.4),
+      transparent
+    );
+    transform: translateX(-100%);
+    animation: shimmer 3s infinite;
+    z-index: 1;
+  }
+  
+  .brand-text-glow {
+    @apply relative;
+    background: linear-gradient(135deg, hsl(var(--medical-gold)), hsl(var(--medical-gold-light)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow-pulse 4s ease-in-out infinite, floating 6s ease-in-out infinite;
+  }
+  
+  .brand-text-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, hsl(var(--medical-gold) / 0.6) 50%, transparent 70%);
+    animation: radiant-glow 4s linear infinite;
+    z-index: -1;
+    border-radius: 8px;
+    filter: blur(8px);
+  }
+  
+  .sparkle-effect {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: hsl(var(--medical-gold));
+    border-radius: 50%;
+    animation: sparkle 2s linear infinite;
+  }
+  
+  .sparkle-1 {
+    top: 20%;
+    left: 80%;
+    animation-delay: 0s;
+  }
+  
+  .sparkle-2 {
+    top: 60%;
+    left: 20%;
+    animation-delay: 0.7s;
+  }
+  
+  .sparkle-3 {
+    top: 80%;
+    left: 70%;
+    animation-delay: 1.4s;
+  }
+  
+  .sparkle-4 {
+    top: 30%;
+    left: 40%;
+    animation-delay: 2.1s;
+  }
 }
