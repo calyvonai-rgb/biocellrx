@@ -26,16 +26,16 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-4 sm:px-6 py-3">
+      <div className="container mx-auto px-4 sm:px-6 py-2">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 sm:space-x-3" onClick={closeMenu}>
             <img 
               src="/uploads/logo.png" 
               alt="BioCellRx Logo" 
-              className="h-10 sm:h-12 w-auto"
+              className="h-8 sm:h-10 w-auto"
             />
-            <span className="text-lg sm:text-2xl font-bold text-foreground">
+            <span className="text-base sm:text-xl font-bold text-foreground">
               BioCellRx
             </span>
           </Link>
