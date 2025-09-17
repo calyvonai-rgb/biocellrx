@@ -19,11 +19,11 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full px-4 sm:px-6 pt-24 sm:pt-32 pb-12">
+      <div className="relative z-10 w-full px-4 sm:px-6 pt-28 sm:pt-32 pb-12">
         <div className="w-full max-w-none sm:max-w-4xl mx-auto text-center">
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 text-white leading-tight px-2 mt-8 sm:mt-0">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 text-white leading-tight px-2 mt-12 sm:mt-0">
             Advanced Regenerative Medicine &{" "}
-            <br className="hidden sm:block" />
+            <br />
             <span className="bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent">
               Stem Cell Therapy
             </span>
