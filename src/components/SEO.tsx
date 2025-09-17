@@ -32,7 +32,7 @@ const SEO = ({
         "url": "https://biocellrx.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://biocellrx.com/uploads/abc8e5e6-fdc8-4aeb-83a6-f51637383091.png",
+          "url": "https://biocellrx.com/biocellrx-favicon.png",
           "width": 400,
           "height": 400
         },
