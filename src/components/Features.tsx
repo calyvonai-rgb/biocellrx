@@ -41,23 +41,28 @@ const Features = () => {
       if (isVideoVisible && videoElementRef.current) {
         const video = videoElementRef.current;
         
-        try {
-          // Try to play with sound first
-          video.muted = false;
-          await video.play();
-          setIsMuted(false);
-          setShowUnmuteButton(false);
-        } catch (error) {
+        // Add a small delay to ensure video is loaded
+        setTimeout(async () => {
           try {
-            // Fallback to muted autoplay
-            video.muted = true;
+            // Try to play with sound first
+            video.muted = false;
+            video.currentTime = 0; // Reset to beginning
             await video.play();
-            setIsMuted(true);
-            setShowUnmuteButton(true);
-          } catch (mutedError) {
-            console.log('Autoplay failed even with muted video:', mutedError);
+            setIsMuted(false);
+            setShowUnmuteButton(false);
+          } catch (error) {
+            try {
+              // Fallback to muted autoplay
+              video.muted = true;
+              video.currentTime = 0; // Reset to beginning
+              await video.play();
+              setIsMuted(true);
+              setShowUnmuteButton(true);
+            } catch (mutedError) {
+              console.log('Autoplay failed even with muted video:', mutedError);
+            }
           }
-        }
+        }, 100);
       }
     };
 
@@ -118,6 +123,8 @@ const Features = () => {
                       loop
                       controls
                       playsInline
+                      preload="metadata"
+                      webkit-playsinline="true"
                       style={{position:"absolute", top:0, left:0, width:"100%", height:"100%", objectFit: "cover"}} 
                       className="video-fill rounded-xl"
                     >
