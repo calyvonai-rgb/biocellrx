@@ -116,34 +116,15 @@ const Features = () => {
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-accent/20">
               <div style={{padding:"56.25% 0 0 0", position:"relative"}} className="rounded-xl overflow-hidden video-container">
                 {isVideoVisible ? (
-                  <>
-                    <video 
-                      ref={videoElementRef}
-                      src="/uploads/biocell how.mp4"
-                      loop
-                      controls
-                      playsInline
-                      preload="metadata"
-                      webkit-playsinline="true"
-                      style={{position:"absolute", top:0, left:0, width:"100%", height:"100%", objectFit: "cover"}} 
-                      className="video-fill rounded-xl"
-                    >
-                      Your browser does not support the video tag.
-                    </video>
-                    {showUnmuteButton && (
-                      <button
-                        onClick={toggleMute}
-                        className="absolute top-4 right-4 z-10 bg-black/70 hover:bg-black/90 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
-                        aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-                      >
-                        {isMuted ? (
-                          <VolumeX className="w-5 h-5" />
-                        ) : (
-                          <Volume2 className="w-5 h-5" />
-                        )}
-                      </button>
-                    )}
-                  </>
+                  <iframe 
+                    src="https://player.vimeo.com/video/1117754950?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&controls=1&autoplay=1&muted=1"
+                    frameBorder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                    referrerPolicy="strict-origin-when-cross-origin" 
+                    style={{position:"absolute", top:0, left:0, width:"100%", height:"100%"}}
+                    title="BioCellRx Process"
+                    className="rounded-xl"
+                  />
                 ) : (
                   <div 
                     className="absolute inset-0 bg-gray-100 flex items-center justify-center video-fill"
