@@ -106,18 +106,18 @@ const Features = () => {
       {/* Animated Background Decorations */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Floating Circles */}
-        <div className="absolute top-20 left-10 w-32 h-32 border-2 border-primary/20 rounded-full animate-[spin_20s_linear_infinite]"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 border border-accent/30 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
-        <div className="absolute bottom-32 left-1/4 w-16 h-16 bg-primary/10 rounded-full animate-[pulse_3s_ease-in-out_infinite]"></div>
-        <div className="absolute bottom-20 right-1/3 w-20 h-20 border-2 border-secondary/20 rounded-full animate-[spin_25s_linear_infinite]"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 border-2 border-primary/20 rounded-full animate-spin"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 border border-accent/30 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-32 left-1/4 w-16 h-16 bg-primary/10 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-20 right-1/3 w-20 h-20 border-2 border-accent/20 rounded-full animate-spin"></div>
         
         {/* Animated Lines */}
-        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent animate-[fade-in_2s_ease-out]"></div>
-        <div className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent animate-[fade-in_2s_ease-out_1s]"></div>
+        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+        <div className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent"></div>
         
         {/* Geometric Shapes */}
-        <div className="absolute top-1/3 right-10 w-12 h-12 border border-primary/25 rotate-45 animate-[spin_30s_linear_infinite]"></div>
-        <div className="absolute bottom-1/2 left-20 w-8 h-8 bg-accent/20 rotate-12 animate-[pulse_4s_ease-in-out_infinite]"></div>
+        <div className="absolute top-1/3 right-10 w-12 h-12 border border-primary/25 rotate-45 animate-spin"></div>
+        <div className="absolute bottom-1/2 left-20 w-8 h-8 bg-accent/20 rotate-12 animate-pulse"></div>
       </div>
       <div className="container mx-auto px-6">
         {/* Video Section */}
@@ -196,7 +196,7 @@ const Features = () => {
                   </div>
                   
                   {/* Ripple Effect */}
-                  <div className="absolute inset-0 w-16 h-16 mx-auto rounded-full border-2 border-primary/30 scale-0 group-hover:scale-150 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+                  <div className="absolute inset-0 w-16 h-16 mx-auto rounded-full border-2 border-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700"></div>
                 </div>
                 
                 {/* Badge with Animation */}
@@ -237,8 +237,8 @@ const Features = () => {
           />
           
           {/* Floating Animation Elements */}
-          <div className="absolute -top-4 -left-4 w-8 h-8 border-2 border-primary/30 rounded-full animate-[bounce_3s_ease-in-out_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-accent/30 rounded-full animate-[pulse_2s_ease-in-out_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          <div className="absolute -top-4 -left-4 w-8 h-8 border-2 border-primary/30 rounded-full animate-bounce opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-accent/30 rounded-full animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
         </div>
       </div>
     </section>
