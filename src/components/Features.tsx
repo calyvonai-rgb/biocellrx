@@ -8,72 +8,8 @@ import {
 import VideoPlayer from "@/components/VideoPlayer";
 import videoThumbnail from "@/assets/video-thumbnail.jpg";
 import whyChooseImage from "@/assets/why-choose-biocellrx.png";
-import { useEffect, useRef, useState } from "react";
-import { Volume2, VolumeX } from "lucide-react";
 
 const Features = () => {
-  const videoRef = useRef<HTMLDivElement>(null);
-  const videoElementRef = useRef<HTMLVideoElement>(null);
-  const [isVideoVisible, setIsVideoVisible] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-  const [showUnmuteButton, setShowUnmuteButton] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !isVideoVisible) {
-          setIsVideoVisible(true);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [isVideoVisible]);
-
-  // Handle autoplay with sound fallback
-  useEffect(() => {
-    const handleAutoplay = async () => {
-      if (isVideoVisible && videoElementRef.current) {
-        const video = videoElementRef.current;
-        
-        try {
-          // Try to play with sound first
-          video.muted = false;
-          await video.play();
-          setIsMuted(false);
-          setShowUnmuteButton(false);
-        } catch (error) {
-          try {
-            // Fallback to muted autoplay
-            video.muted = true;
-            await video.play();
-            setIsMuted(true);
-            setShowUnmuteButton(true);
-          } catch (mutedError) {
-            console.log('Autoplay failed even with muted video:', mutedError);
-          }
-        }
-      }
-    };
-
-    if (isVideoVisible) {
-      handleAutoplay();
-    }
-  }, [isVideoVisible]);
-
-  const toggleMute = () => {
-    if (videoElementRef.current) {
-      const video = videoElementRef.current;
-      video.muted = !video.muted;
-      setIsMuted(video.muted);
-      setShowUnmuteButton(video.muted);
-    }
-  };
 
   const features = [
     {
@@ -99,56 +35,38 @@ const Features = () => {
   return (
     <section id="about" className="py-20 bg-medical-light">
       <div className="container mx-auto px-6">
-        {/* Video Section */}
+        {/* Features Cards Section */}
         <div className="mb-20">
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              See Our Process in Action
+              Why Choose BioCellRx
             </h3>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Experience the difference with our expert team, scientifically-backed solutions, and industry-leading innovation.
+            </p>
           </div>
 
-          <div className="max-w-4xl mx-auto" ref={videoRef}>
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-accent/20">
-              <div style={{padding:"56.25% 0 0 0", position:"relative"}} className="rounded-xl overflow-hidden video-container">
-                {isVideoVisible ? (
-                  <>
-                    <video 
-                      ref={videoElementRef}
-                      src="/uploads/biocell how.mp4"
-                      loop
-                      controls
-                      playsInline
-                      style={{position:"absolute", top:0, left:0, width:"100%", height:"100%", objectFit: "cover"}} 
-                      className="video-fill rounded-xl"
-                    >
-                      Your browser does not support the video tag.
-                    </video>
-                    {showUnmuteButton && (
-                      <button
-                        onClick={toggleMute}
-                        className="absolute top-4 right-4 z-10 bg-black/70 hover:bg-black/90 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
-                        aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-                      >
-                        {isMuted ? (
-                          <VolumeX className="w-5 h-5" />
-                        ) : (
-                          <Volume2 className="w-5 h-5" />
-                        )}
-                      </button>
-                    )}
-                  </>
-                ) : (
-                  <div 
-                    className="absolute inset-0 bg-gray-100 flex items-center justify-center video-fill"
-                    style={{backgroundImage: `url(${videoThumbnail})`, backgroundSize: 'cover', backgroundPosition: 'center'}}
-                  >
-                    <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center">
-                      <div className="w-0 h-0 border-l-[12px] border-l-black border-y-[8px] border-y-transparent ml-1"></div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {features.map((feature, index) => (
+              <Card key={index} className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 border-accent/20 bg-background/50 backdrop-blur-sm">
+                <CardContent className="p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-glow rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <feature.icon className="w-6 h-6 text-primary-foreground" />
                     </div>
+                    <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                      {feature.badge}
+                    </Badge>
                   </div>
-                )}
-              </div>
-            </div>
+                  <h4 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
+                    {feature.title}
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
         
