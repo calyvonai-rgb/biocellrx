@@ -88,7 +88,7 @@ const Features = () => {
                     {features.map((feature, index) => (
                       <Card 
                         key={index} 
-                        className="group relative bg-white/95 backdrop-blur-sm border-accent/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 overflow-hidden mx-auto w-full max-w-sm md:max-w-none"
+                        className="group relative bg-white/70 backdrop-blur-sm border-accent/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 overflow-hidden mx-auto w-full max-w-sm md:max-w-none hover:bg-white/80"
                       >
                         {/* Card Background Effect */}
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
