@@ -115,6 +115,13 @@ const Footer = () => {
               >
                 Terms of Service
               </a>
+              <span className="text-white/40">|</span>
+              <a 
+                href="/disclaimer" 
+                className="text-white/60 hover:text-accent transition-colors underline"
+              >
+                DISCLAIMER
+              </a>
             </div>
           </div>
         </div>

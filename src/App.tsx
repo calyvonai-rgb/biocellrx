@@ -17,6 +17,7 @@ import Contact from "./pages/Contact";
 import Resources from "./pages/Resources";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import Disclaimer from "./pages/Disclaimer";
 import NotFound from "./pages/NotFound";
 import ServiceUnavailable from "./pages/ServiceUnavailable";
 
@@ -46,11 +47,12 @@ const App = () => {
                 <Route path="/services" element={<Services />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/resources" element={<Resources />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route path="/terms-of-service" element={<TermsOfService />} />
-                <Route path="/503" element={<ServiceUnavailable />} />
-                <Route path="/maintenance" element={<ServiceUnavailable />} />
+                 <Route path="/resources" element={<Resources />} />
+                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                 <Route path="/terms-of-service" element={<TermsOfService />} />
+                 <Route path="/disclaimer" element={<Disclaimer />} />
+                 <Route path="/503" element={<ServiceUnavailable />} />
+                 <Route path="/maintenance" element={<ServiceUnavailable />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>

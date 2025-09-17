@@ -22,7 +22,7 @@ const Hero = () => {
       <div className="relative z-10 w-full px-2 sm:px-6 pt-20 sm:pt-32 pb-12">
         <div className="w-full max-w-none sm:max-w-4xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 text-white leading-tight px-2">
-            Reclaim Your Passion. Rediscover Life with Our{" "}
+            Advanced Regenerative Medicine &{" "}
             <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent whitespace-nowrap">
               Stem Cell Therapy
@@ -31,7 +31,7 @@ const Hero = () => {
 
           {/* Subheadline with hot keywords */}
           <p className="text-lg sm:text-xl md:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-10 w-full sm:max-w-4xl mx-auto leading-relaxed px-4 sm:px-2">
-            BioCellRx empowers you to achieve a better quality of life through advanced, natural healing. Our cutting-edge stem cell therapies and premium wellness products work with your body, not against it, to restore optimal health. It's time to feel your best again.
+            Leading the future of regenerative medicine with advanced stem cell therapies and premium wellness products. Transforming lives through scientific innovation.
           </p>
 
           {/* CTA Buttons */}

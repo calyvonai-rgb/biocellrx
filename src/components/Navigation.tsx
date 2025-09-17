@@ -13,6 +13,7 @@ const Navigation = () => {
     { name: "Home", href: "/", isRoute: true },
     { name: "Wellness and Biologics", href: "/services", isRoute: true },
     { name: "About", href: "/about", isRoute: true },
+    { name: "Knowledge Center", href: "/resources", isRoute: true },
     { name: "Contact", href: "/contact", isRoute: true },
   ];
 
