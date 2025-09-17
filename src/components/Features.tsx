@@ -103,22 +103,6 @@ const Features = () => {
 
   return (
     <section id="about" className="py-20 bg-medical-light relative overflow-hidden">
-      {/* Animated Background Decorations */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Floating Circles */}
-        <div className="absolute top-20 left-10 w-32 h-32 border-2 border-primary/20 rounded-full animate-spin"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 border border-accent/30 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-32 left-1/4 w-16 h-16 bg-primary/10 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 right-1/3 w-20 h-20 border-2 border-accent/20 rounded-full animate-spin"></div>
-        
-        {/* Animated Lines */}
-        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
-        <div className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent"></div>
-        
-        {/* Geometric Shapes */}
-        <div className="absolute top-1/3 right-10 w-12 h-12 border border-primary/25 rotate-45 animate-spin"></div>
-        <div className="absolute bottom-1/2 left-20 w-8 h-8 bg-accent/20 rotate-12 animate-pulse"></div>
-      </div>
       <div className="container mx-auto px-6">
         {/* Video Section */}
         <div className="mb-20">
@@ -225,10 +209,25 @@ const Features = () => {
           ))}
         </div>
         
-        {/* Why Choose BioCellRx Section with Stem Cell Animations */}
+        {/* Why Choose BioCellRx Section with All Animations */}
         <div className="relative">
-          {/* Moving Stem Cells around entire Why Choose section */}
+          {/* All Background Animations */}
           <div className="absolute inset-0 pointer-events-none overflow-visible">
+            {/* Floating Circles */}
+            <div className="absolute top-20 left-10 w-32 h-32 border-2 border-primary/20 rounded-full animate-spin"></div>
+            <div className="absolute top-40 right-20 w-24 h-24 border border-accent/30 rounded-full animate-pulse"></div>
+            <div className="absolute bottom-32 left-1/4 w-16 h-16 bg-primary/10 rounded-full animate-pulse"></div>
+            <div className="absolute bottom-20 right-1/3 w-20 h-20 border-2 border-accent/20 rounded-full animate-spin"></div>
+            
+            {/* Animated Lines */}
+            <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+            <div className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent"></div>
+            
+            {/* Geometric Shapes */}
+            <div className="absolute top-1/3 right-10 w-12 h-12 border border-primary/25 rotate-45 animate-spin"></div>
+            <div className="absolute bottom-1/2 left-20 w-8 h-8 bg-accent/20 rotate-12 animate-pulse"></div>
+
+            {/* Moving Stem Cells */}
             <div className="absolute top-10 left-8 w-6 h-6 bg-primary/20 rounded-full animate-bounce" 
                  style={{ animationDelay: '0s', animationDuration: '3s' }}>
               <div className="absolute inset-1 bg-primary/30 rounded-full"></div>
