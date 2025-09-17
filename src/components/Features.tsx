@@ -119,7 +119,7 @@ const Features = () => {
                   <>
                     <video 
                       ref={videoElementRef}
-                      src="/uploads/biocell how.mp4"
+                      src="./uploads/biocell how.mp4"
                       loop
                       controls
                       playsInline
