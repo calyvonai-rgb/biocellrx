@@ -225,11 +225,11 @@ const Features = () => {
           ))}
         </div>
         
-        {/* Why Choose BioCellRx Image with Enhanced Effects */}
-        <div className="max-w-6xl mx-auto relative group">
-          {/* Moving Stem Cells around Why Choose section */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-10 left-16 w-6 h-6 bg-primary/20 rounded-full animate-bounce" 
+        {/* Why Choose BioCellRx Section with Stem Cell Animations */}
+        <div className="relative">
+          {/* Moving Stem Cells around entire Why Choose section */}
+          <div className="absolute inset-0 pointer-events-none overflow-visible">
+            <div className="absolute top-10 left-8 w-6 h-6 bg-primary/20 rounded-full animate-bounce" 
                  style={{ animationDelay: '0s', animationDuration: '3s' }}>
               <div className="absolute inset-1 bg-primary/30 rounded-full"></div>
               <div className="absolute top-1 left-1 w-2 h-2 bg-primary/50 rounded-full"></div>
@@ -242,56 +242,55 @@ const Features = () => {
               <div className="absolute bottom-1.5 right-1.5 w-1.5 h-1.5 bg-accent/40 rounded-full"></div>
             </div>
             
-            <div className="absolute top-1/3 left-8 w-5 h-5 bg-primary/25 rounded-full animate-[drift_5s_linear_infinite]" 
+            <div className="absolute top-40 left-16 w-5 h-5 bg-primary/25 rounded-full animate-[drift_5s_linear_infinite]" 
                  style={{ animationDelay: '2s' }}>
               <div className="absolute inset-0.5 bg-primary/35 rounded-full"></div>
               <div className="absolute top-1 left-1 w-1.5 h-1.5 bg-primary/60 rounded-full"></div>
             </div>
             
-            <div className="absolute bottom-16 left-20 w-7 h-7 bg-accent/15 rounded-full animate-[float_3.5s_ease-in-out_infinite]" 
+            <div className="absolute top-60 right-20 w-7 h-7 bg-accent/15 rounded-full animate-[float_3.5s_ease-in-out_infinite]" 
                  style={{ animationDelay: '0.5s' }}>
               <div className="absolute inset-1 bg-accent/25 rounded-full"></div>
               <div className="absolute top-1.5 left-1.5 w-2 h-2 bg-accent/45 rounded-full"></div>
               <div className="absolute bottom-1 right-1 w-1 h-1 bg-accent/35 rounded-full"></div>
             </div>
             
-            <div className="absolute bottom-12 right-16 w-6 h-6 bg-primary/18 rounded-full animate-[drift_4.5s_linear_infinite]" 
+            <div className="absolute bottom-32 left-12 w-6 h-6 bg-primary/18 rounded-full animate-[drift_4.5s_linear_infinite]" 
                  style={{ animationDelay: '1.5s' }}>
               <div className="absolute inset-1 bg-primary/28 rounded-full"></div>
               <div className="absolute top-1 left-1 w-1.5 h-1.5 bg-primary/50 rounded-full"></div>
             </div>
             
-            <div className="absolute top-1/2 right-4 w-4 h-4 bg-accent/22 rounded-full animate-[float_3s_ease-in-out_infinite]" 
+            <div className="absolute bottom-16 right-16 w-4 h-4 bg-accent/22 rounded-full animate-[float_3s_ease-in-out_infinite]" 
                  style={{ animationDelay: '2.5s' }}>
               <div className="absolute inset-0.5 bg-accent/32 rounded-full"></div>
               <div className="absolute top-0.5 left-0.5 w-1 h-1 bg-accent/55 rounded-full"></div>
             </div>
 
-            <div className="absolute top-1/4 left-1/3 w-5 h-5 bg-primary/20 rounded-full animate-[drift_3.8s_linear_infinite]" 
+            <div className="absolute top-1/3 left-1/4 w-5 h-5 bg-primary/20 rounded-full animate-[drift_3.8s_linear_infinite]" 
                  style={{ animationDelay: '1.2s' }}>
               <div className="absolute inset-0.5 bg-primary/30 rounded-full"></div>
               <div className="absolute top-1 left-1 w-1.5 h-1.5 bg-primary/50 rounded-full"></div>
             </div>
             
-            <div className="absolute bottom-1/3 right-1/4 w-6 h-6 bg-accent/18 rounded-full animate-[float_4.2s_ease-in-out_infinite]" 
+            <div className="absolute top-1/2 right-1/4 w-6 h-6 bg-accent/18 rounded-full animate-[float_4.2s_ease-in-out_infinite]" 
                  style={{ animationDelay: '0.8s' }}>
               <div className="absolute inset-1 bg-accent/28 rounded-full"></div>
               <div className="absolute top-1.5 left-1.5 w-1.5 h-1.5 bg-accent/45 rounded-full"></div>
             </div>
           </div>
 
-          {/* Background Glow Effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-accent/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-          
-          <img 
-            src={whyChooseImage} 
-            alt="Why Choose BioCellRx - Industry-leading cellular products backed by two decades of research and development in stem cell therapeutics"
-            className="relative w-full h-auto rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] z-10"
-          />
-          
-          {/* Floating Animation Elements */}
-          <div className="absolute -top-4 -left-4 w-8 h-8 border-2 border-primary/30 rounded-full animate-bounce opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-accent/30 rounded-full animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          {/* Why Choose BioCellRx Image */}
+          <div className="max-w-6xl mx-auto relative group">
+            {/* Background Glow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-accent/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            
+            <img 
+              src={whyChooseImage} 
+              alt="Why Choose BioCellRx - Industry-leading cellular products backed by two decades of research and development in stem cell therapeutics"
+              className="relative w-full h-auto rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] z-10"
+            />
+          </div>
         </div>
       </div>
     </section>
