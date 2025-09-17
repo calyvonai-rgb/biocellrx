@@ -21,55 +21,56 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 w-full px-2 sm:px-6 pt-20 sm:pt-32 pb-12">
         <div className="w-full max-w-none sm:max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-6 text-white leading-tight px-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 text-white leading-tight px-2">
             Reclaim Your Passion. Rediscover Life with Our{" "}
-            <span className="bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent">
+            <br className="hidden sm:block" />
+            <span className="bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent whitespace-nowrap">
               Stem Cell Therapy
             </span>
           </h1>
 
           {/* Subheadline with hot keywords */}
-          <p className="text-xl sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-8 w-full sm:max-w-4xl mx-auto leading-relaxed px-2">
+          <p className="text-lg sm:text-xl md:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-10 w-full sm:max-w-4xl mx-auto leading-relaxed px-4 sm:px-2">
             BioCellRx empowers you to achieve a better quality of life through advanced, natural healing. Our cutting-edge stem cell therapies and premium wellness products work with your body, not against it, to restore optimal health. It's time to feel your best again.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center mb-12 sm:mb-12 px-2 w-full">
-            <Link to="/contact" className="w-full sm:w-auto">
-              <Button variant="medical" size="lg" className="group hover-scale text-lg sm:text-base px-8 py-5 sm:px-6 sm:py-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 sm:mb-16 px-4 sm:px-2 w-full max-w-2xl mx-auto">
+            <Link to="/contact" className="w-full sm:w-auto flex-1 sm:flex-initial">
+              <Button variant="medical" size="lg" className="group hover-scale text-base sm:text-lg px-6 py-4 sm:px-8 sm:py-5 w-full sm:w-auto min-w-[200px]">
                 Get Free Stem Cell Consultation
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <a href="tel:+18585197305" className="w-full sm:w-auto">
-              <Button variant="outline" size="lg" className="border-white bg-transparent text-white hover:bg-white hover:text-black hover-scale text-lg sm:text-base px-8 py-5 sm:px-6 sm:py-3 w-full sm:w-auto">
+            <a href="tel:+18585197305" className="w-full sm:w-auto flex-1 sm:flex-initial">
+              <Button variant="outline" size="lg" className="border-white bg-transparent text-white hover:bg-white hover:text-black hover-scale text-base sm:text-lg px-6 py-4 sm:px-8 sm:py-5 w-full sm:w-auto min-w-[180px]">
                 Call (858) 519-7305
               </Button>
             </a>
           </div>
 
-          {/* Stats - Hidden on Mobile */}
-          <div className="hidden sm:grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-3xl mx-auto">
+          {/* Stats - Responsive Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto px-4">
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-white/10 rounded-full mb-2 sm:mb-3">
-                <Award className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
+              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white/10 rounded-full mb-3 sm:mb-4">
+                <Award className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
               </div>
-              <div className="text-white font-semibold text-sm sm:text-base">Clinically Advanced</div>
-              <div className="text-white/70 text-sm sm:text-sm">Cellular Products</div>
+              <div className="text-white font-semibold text-base sm:text-lg">Clinically Advanced</div>
+              <div className="text-white/70 text-sm sm:text-base">Cellular Products</div>
             </div>
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-white/10 rounded-full mb-2 sm:mb-3">
-                <Users className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
+              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white/10 rounded-full mb-3 sm:mb-4">
+                <Users className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
               </div>
-              <div className="text-white font-semibold text-sm sm:text-base">20+ Years</div>
-              <div className="text-white/70 text-sm sm:text-sm">Research & Development</div>
+              <div className="text-white font-semibold text-base sm:text-lg">20+ Years</div>
+              <div className="text-white/70 text-sm sm:text-base">Research & Development</div>
             </div>
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-white/10 rounded-full mb-2 sm:mb-3">
-                <Network className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
+              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white/10 rounded-full mb-3 sm:mb-4">
+                <Network className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
               </div>
-              <div className="text-white font-semibold text-sm sm:text-base">Network of</div>
-              <div className="text-white/70 text-sm sm:text-sm">Expert Practitioners</div>
+              <div className="text-white font-semibold text-base sm:text-lg">Network of</div>
+              <div className="text-white/70 text-sm sm:text-base">Expert Practitioners</div>
             </div>
           </div>
         </div>
