@@ -80,11 +80,11 @@ const VideoPlayer = ({
         {autoplay && (
           <div className="absolute inset-0">
             <iframe
-              src={`${getEmbedUrl(videoUrl)}&muted=1&playsinline=1`}
+              src={`${getEmbedUrl(videoUrl)}&muted=${isMuted ? 1 : 0}`}
               width="100%"
               height="100%"
               frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
+              allow="autoplay; fullscreen"
               className="absolute inset-0 w-full h-full object-cover video-fill"
             />
           </div>

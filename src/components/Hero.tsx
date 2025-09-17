@@ -6,7 +6,7 @@ import labHeroBg from "@/assets/lab-hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" role="banner" aria-label="BioCellRx Hero Section">
+    <section id="home" className="relative min-h-screen h-screen sm:min-h-screen sm:h-auto flex items-center justify-center overflow-hidden" role="banner" aria-label="BioCellRx Hero Section">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -19,9 +19,9 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full px-2 sm:px-6 pt-36 sm:pt-28 pb-12">
+      <div className="relative z-10 w-full px-2 sm:px-6 pt-20 sm:pt-32 pb-12">
         <div className="w-full max-w-none sm:max-w-4xl mx-auto text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 text-white leading-tight px-2 safe-area-top">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 text-white leading-tight px-2">
             Reclaim Your Passion. Rediscover Life with Our{" "}
             <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent whitespace-nowrap">
