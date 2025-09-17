@@ -30,32 +30,50 @@ const VitalityVideo = () => {
           <div className="relative w-full h-full">
             <iframe 
               ref={iframeRef}
-              src="https://player.vimeo.com/video/1117754950?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&controls=1&autoplay=1&muted=1&playsinline=1"
+              src="https://player.vimeo.com/video/1117754950?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&controls=1&autoplay=0&muted=1&playsinline=1"
               frameBorder="0" 
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
               referrerPolicy="strict-origin-when-cross-origin" 
               style={{position:"absolute", top:0, left:0, width:"100%", height:"100%"}}
               title="Bio cell RX"
               className="rounded-2xl shadow-xl video-fill"
+              onLoad={() => {
+                // Auto-play after iframe loads
+                setTimeout(() => {
+                  if (iframeRef.current?.contentWindow) {
+                    iframeRef.current.contentWindow.postMessage('{"method":"play"}', '*');
+                  }
+                }, 1000);
+              }}
             />
-            {isMuted && (
-              <button
-                onClick={() => {
+            <button
+              onClick={() => {
+                if (isMuted) {
                   setIsMuted(false);
-                  // Use Vimeo API to unmute
                   if (iframeRef.current?.contentWindow) {
                     iframeRef.current.contentWindow.postMessage('{"method":"setVolume","value":1}', '*');
                   }
-                }}
-                className="absolute top-4 right-4 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
-                aria-label="Unmute video"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-                </svg>
-              </button>
-            )}
+                } else {
+                  if (iframeRef.current?.contentWindow) {
+                    iframeRef.current.contentWindow.postMessage('{"method":"play"}', '*');
+                  }
+                }
+              }}
+              className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors z-10"
+              aria-label={isMuted ? "Unmute and play video" : "Play video"}
+            >
+              <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
+                {isMuted ? (
+                  <svg className="w-6 h-6 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                ) : (
+                  <svg className="w-6 h-6 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                )}
+              </div>
+            </button>
           </div>
         ) : (
           <div 
