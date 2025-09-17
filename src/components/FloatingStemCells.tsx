@@ -25,7 +25,7 @@ const FloatingStemCells = () => {
         size: Math.random() * 20 + 10, // 10-30px
         speed: Math.random() * 0.5 + 0.2, // 0.2-0.7
         direction: Math.random() * 360,
-        opacity: Math.random() * 0.3 + 0.1, // 0.1-0.4
+        opacity: Math.random() * 0.6 + 0.4, // 0.4-1.0
         rotationSpeed: Math.random() * 2 + 0.5, // 0.5-2.5
       });
     }
@@ -60,7 +60,7 @@ const FloatingStemCells = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
       {stemCells.map((cell) => (
         <div
           key={cell.id}
@@ -74,39 +74,36 @@ const FloatingStemCells = () => {
             animation: `stem-cell-float ${20 + cell.id * 2}s infinite linear, stem-cell-pulse ${3 + cell.id * 0.5}s infinite ease-in-out`,
           }}
         >
-          {/* Outer cell membrane */}
           <div 
-            className="w-full h-full rounded-full border-2 border-medical-gold/30 bg-gradient-to-br from-medical-gold/20 to-medical-gold/5 relative"
+            className="w-full h-full rounded-full border-2 border-medical-gold/60 bg-gradient-to-br from-medical-gold/40 to-medical-gold/20 relative shadow-lg shadow-medical-gold/30"
             style={{
               animation: `stem-cell-rotate ${cell.rotationSpeed * 10}s infinite linear`,
             }}
           >
-            {/* Cell nucleus */}
             <div 
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/3 h-1/3 rounded-full bg-medical-gold/40 border border-medical-gold/50"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/3 h-1/3 rounded-full bg-medical-gold/70 border border-medical-gold/80 shadow-sm"
               style={{
                 animation: `stem-cell-nucleus-pulse ${4 + cell.id * 0.3}s infinite ease-in-out alternate`,
               }}
             >
               {/* Inner nucleus */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 rounded-full bg-medical-gold/60"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 rounded-full bg-medical-gold/90"></div>
             </div>
             
-            {/* Organelles */}
             <div 
-              className="absolute top-1/4 right-1/4 w-1/6 h-1/6 rounded-full bg-medical-gold/30"
+              className="absolute top-1/4 right-1/4 w-1/6 h-1/6 rounded-full bg-medical-gold/50"
               style={{
                 animation: `stem-cell-organelle ${6 + cell.id * 0.4}s infinite ease-in-out`,
               }}
             ></div>
             <div 
-              className="absolute bottom-1/4 left-1/4 w-1/8 h-1/8 rounded-full bg-medical-gold/25"
+              className="absolute bottom-1/4 left-1/4 w-1/8 h-1/8 rounded-full bg-medical-gold/45"
               style={{
                 animation: `stem-cell-organelle ${5 + cell.id * 0.6}s infinite ease-in-out reverse`,
               }}
             ></div>
             <div 
-              className="absolute top-3/4 right-3/4 w-1/10 h-1/10 rounded-full bg-medical-gold/35"
+              className="absolute top-3/4 right-3/4 w-1/10 h-1/10 rounded-full bg-medical-gold/55"
               style={{
                 animation: `stem-cell-organelle ${7 + cell.id * 0.2}s infinite ease-in-out`,
               }}
