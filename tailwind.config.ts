@@ -177,6 +177,16 @@ export default {
             background: "linear-gradient(45deg, transparent 30%, hsl(var(--medical-gold) / 0.8) 50%, transparent 70%)",
             transform: "translateX(200%) skew(-20deg)"
           }
+        },
+        "float-up": {
+          "0%, 100%": {
+            transform: "translateY(0px) scale(1)",
+            opacity: "0.6"
+          },
+          "50%": {
+            transform: "translateY(-20px) scale(1.2)",
+            opacity: "1"
+          }
         }
       },
       animation: {
@@ -195,7 +205,12 @@ export default {
         "glow-pulse": "glow-pulse 4s ease-in-out infinite",
         "sparkle": "sparkle 2s linear infinite",
         "floating": "floating 6s ease-in-out infinite",
-        "radiant-glow": "radiant-glow 4s linear infinite"
+        "radiant-glow": "radiant-glow 4s linear infinite",
+        "float-1": "float-up 4s infinite ease-in-out",
+        "float-2": "float-up 5s infinite ease-in-out 1s",
+        "float-3": "float-up 6s infinite ease-in-out 2s",
+        "float-4": "float-up 4.5s infinite ease-in-out 0.5s",
+        "float-5": "float-up 5.5s infinite ease-in-out 1.5s"
       },
       backgroundImage: {
         "gradient-hero": "var(--gradient-hero)",
