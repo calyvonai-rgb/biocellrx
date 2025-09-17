@@ -88,10 +88,10 @@ const Features = () => {
                     {features.map((feature, index) => (
                       <Card 
                         key={index} 
-                        className="group relative bg-white/80 md:bg-white/70 backdrop-blur-md border-accent/30 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 overflow-hidden mx-auto w-full max-w-sm md:max-w-none hover:bg-white/90 border-2"
+                        className="group relative bg-white/60 md:bg-white/70 backdrop-blur-sm border-accent/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 overflow-hidden mx-auto w-full max-w-sm md:max-w-none hover:bg-white/80"
                       >
                         {/* Card Background Effect */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-white/20 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         
                         {/* Animated Border Effect */}
                         <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/20 rounded-lg transition-all duration-300"></div>
@@ -116,12 +116,12 @@ const Features = () => {
                           </Badge>
                           
                           {/* Title with Stagger Animation */}
-                          <h4 className="text-sm md:text-lg font-bold mb-2 md:mb-3 text-gray-900 group-hover:text-primary transition-colors duration-300">
+                          <h4 className="text-sm md:text-lg font-bold mb-2 md:mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
                             {feature.title}
                           </h4>
                           
                           {/* Description with Fade Effect */}
-                          <p className="text-xs md:text-sm text-gray-700 leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
+                          <p className="text-xs md:text-sm text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
                             {feature.description}
                           </p>
                         </CardContent>
