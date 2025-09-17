@@ -12,7 +12,7 @@ const Footer = () => {
               <img 
                 src="/uploads/logo.png" 
                 alt="BioCellRx Logo" 
-                className="h-20 w-auto md:h-24"
+                className="h-28 w-auto md:h-24"
               />
             </div>
             {/* Text Content wrapped around logo */}

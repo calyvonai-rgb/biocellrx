@@ -29,13 +29,13 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3" onClick={closeMenu}>
+          <Link to="/" className="flex items-center space-x-2 sm:space-x-3" onClick={closeMenu}>
             <img 
               src="/uploads/logo.png" 
               alt="BioCellRx Logo" 
               className="h-10 sm:h-12 w-auto"
             />
-            <span className="text-xl sm:text-2xl font-bold text-foreground hidden sm:block">
+            <span className="text-lg sm:text-2xl font-bold text-foreground">
               BioCellRx
             </span>
           </Link>
