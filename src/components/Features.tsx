@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import VideoPlayer from "@/components/VideoPlayer";
 import videoThumbnail from "@/assets/video-thumbnail.jpg";
+import whyChooseImage from "@/assets/why-choose-biocellrx.png";
 import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
@@ -151,47 +152,13 @@ const Features = () => {
           </div>
         </div>
         
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Why Choose BioCellRx
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Industry-leading cellular products backed by two decades of research 
-            and development in stem cell therapeutics
-          </p>
-        </div>
-
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <Card 
-              key={index} 
-              className={`group hover:shadow-medical transition-all duration-300 border-0 bg-white animate-fade-in hover-scale ${
-                index === 0 ? 'animation-delay-100' : 
-                index === 1 ? 'animation-delay-200' : 
-                'animation-delay-300'
-              }`}
-              style={{
-                animationDelay: `${index * 0.2}s`
-              }}
-            >
-              <CardContent className="p-8 text-center">
-                <Badge variant="outline" className="mb-4 border-accent/20 text-accent">
-                  {feature.badge}
-                </Badge>
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-6 group-hover:bg-accent/20 transition-colors">
-                  <feature.icon className="w-8 h-8 text-accent" />
-                </div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+        {/* Why Choose BioCellRx Image */}
+        <div className="max-w-6xl mx-auto">
+          <img 
+            src={whyChooseImage} 
+            alt="Why Choose BioCellRx - Industry-leading cellular products backed by two decades of research and development in stem cell therapeutics"
+            className="w-full h-auto rounded-2xl shadow-lg"
+          />
         </div>
       </div>
     </section>

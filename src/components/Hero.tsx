@@ -22,17 +22,15 @@ const Hero = () => {
       <div className="relative z-10 w-full px-2 sm:px-6 pt-20 sm:pt-32 pb-12">
         <div className="w-full max-w-none sm:max-w-4xl mx-auto text-center">
           <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-6 text-white leading-tight px-2">
-            Discover Your Body's{" "}
+            Reclaim Your Passion. Rediscover Life with Our{" "}
             <span className="bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent">
-              Healing Potential
+              Stem Cell Therapy
             </span>
-            {" "}with Stem Cell
           </h1>
 
           {/* Subheadline with hot keywords */}
           <p className="text-xl sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-8 w-full sm:max-w-4xl mx-auto leading-relaxed px-2">
-            <strong className="text-accent">Scientifically-backed</strong> stem cell therapies and <strong className="text-accent">premium CBD products</strong>. 
-            Harness your body's <strong className="text-accent">natural healing</strong> for optimal health with <strong className="text-accent">BioCellRX</strong>.
+            BioCellRx empowers you to achieve a better quality of life through advanced, natural healing. Our cutting-edge stem cell therapies and premium wellness products work with your body, not against it, to restore optimal health. It's time to feel your best again.
           </p>
 
           {/* CTA Buttons */}
