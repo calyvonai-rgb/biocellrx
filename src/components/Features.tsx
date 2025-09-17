@@ -102,7 +102,23 @@ const Features = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-medical-light">
+    <section id="about" className="py-20 bg-medical-light relative overflow-hidden">
+      {/* Animated Background Decorations */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Floating Circles */}
+        <div className="absolute top-20 left-10 w-32 h-32 border-2 border-primary/20 rounded-full animate-[spin_20s_linear_infinite]"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 border border-accent/30 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+        <div className="absolute bottom-32 left-1/4 w-16 h-16 bg-primary/10 rounded-full animate-[pulse_3s_ease-in-out_infinite]"></div>
+        <div className="absolute bottom-20 right-1/3 w-20 h-20 border-2 border-secondary/20 rounded-full animate-[spin_25s_linear_infinite]"></div>
+        
+        {/* Animated Lines */}
+        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent animate-[fade-in_2s_ease-out]"></div>
+        <div className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent animate-[fade-in_2s_ease-out_1s]"></div>
+        
+        {/* Geometric Shapes */}
+        <div className="absolute top-1/3 right-10 w-12 h-12 border border-primary/25 rotate-45 animate-[spin_30s_linear_infinite]"></div>
+        <div className="absolute bottom-1/2 left-20 w-8 h-8 bg-accent/20 rotate-12 animate-[pulse_4s_ease-in-out_infinite]"></div>
+      </div>
       <div className="container mx-auto px-6">
         {/* Video Section */}
         <div className="mb-20">
@@ -159,13 +175,70 @@ const Features = () => {
           </div>
         </div>
         
-        {/* Why Choose BioCellRx Image */}
-        <div className="max-w-6xl mx-auto">
+        {/* Features Grid with Enhanced Animations */}
+        <div className="grid md:grid-cols-3 gap-8 mb-20">
+          {features.map((feature, index) => (
+            <Card 
+              key={index} 
+              className="group relative bg-white border-accent/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 overflow-hidden"
+            >
+              {/* Card Background Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
+              {/* Animated Border Effect */}
+              <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/20 rounded-lg transition-all duration-300"></div>
+              
+              <CardContent className="relative p-8 text-center">
+                {/* Icon with Hover Animation */}
+                <div className="relative mb-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
+                    <feature.icon className="w-8 h-8 text-primary group-hover:scale-125 transition-transform duration-300" />
+                  </div>
+                  
+                  {/* Ripple Effect */}
+                  <div className="absolute inset-0 w-16 h-16 mx-auto rounded-full border-2 border-primary/30 scale-0 group-hover:scale-150 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+                </div>
+                
+                {/* Badge with Animation */}
+                <Badge 
+                  variant="secondary" 
+                  className="mb-4 group-hover:scale-105 transition-transform duration-300 bg-primary/10 text-primary border-primary/20"
+                >
+                  {feature.badge}
+                </Badge>
+                
+                {/* Title with Stagger Animation */}
+                <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
+                  {feature.title}
+                </h3>
+                
+                {/* Description with Fade Effect */}
+                <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                  {feature.description}
+                </p>
+                
+                {/* Decorative Elements */}
+                <div className="absolute top-4 right-4 w-2 h-2 bg-primary/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute bottom-4 left-4 w-1 h-1 bg-accent/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+        
+        {/* Why Choose BioCellRx Image with Enhanced Effects */}
+        <div className="max-w-6xl mx-auto relative group">
+          {/* Background Glow Effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-accent/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          
           <img 
             src={whyChooseImage} 
             alt="Why Choose BioCellRx - Industry-leading cellular products backed by two decades of research and development in stem cell therapeutics"
-            className="w-full h-auto rounded-2xl shadow-lg"
+            className="relative w-full h-auto rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] z-10"
           />
+          
+          {/* Floating Animation Elements */}
+          <div className="absolute -top-4 -left-4 w-8 h-8 border-2 border-primary/30 rounded-full animate-[bounce_3s_ease-in-out_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-accent/30 rounded-full animate-[pulse_2s_ease-in-out_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
         </div>
       </div>
     </section>
