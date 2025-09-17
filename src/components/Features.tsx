@@ -5,8 +5,7 @@ import {
   Shield,
   Zap
 } from "lucide-react";
-import VideoPlayer from "@/components/VideoPlayer";
-import videoThumbnail from "@/assets/video-thumbnail.jpg";
+import ScrollTriggeredVideo from "@/components/ScrollTriggeredVideo";
 import whyChooseImage from "@/assets/why-choose-biocellrx.png";
 
 const Features = () => {
@@ -70,16 +69,14 @@ const Features = () => {
           </div>
         </div>
         
-        {/* Why Choose BioCellRx Image */}
+        {/* Video Section */}
         <div className="max-w-6xl mx-auto">
-          <img 
-            src={whyChooseImage} 
-            alt="Why Choose BioCellRx - Industry-leading cellular products backed by two decades of research and development in stem cell therapeutics"
+          <ScrollTriggeredVideo
+            src="/uploads/biocell how.mp4"
+            autoplay={true}
+            muted={true}
+            loop={true}
             className="w-full h-auto rounded-2xl shadow-lg"
-            style={{ 
-              filter: 'contrast(1.1) brightness(1.05) saturate(1.1)',
-              imageRendering: 'auto'
-            }}
           />
         </div>
       </div>
