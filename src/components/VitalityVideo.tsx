@@ -30,7 +30,7 @@ const VitalityVideo = () => {
           <div className="relative w-full h-full">
             <iframe 
               ref={iframeRef}
-              src={`https://player.vimeo.com/video/1117754950?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&controls=1&autoplay=1&muted=${isMuted ? 1 : 0}&playsinline=1`}
+              src="https://player.vimeo.com/video/1117754950?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&controls=1&autoplay=1&muted=1&playsinline=1"
               frameBorder="0" 
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
               referrerPolicy="strict-origin-when-cross-origin" 
@@ -40,7 +40,13 @@ const VitalityVideo = () => {
             />
             {isMuted && (
               <button
-                onClick={() => setIsMuted(false)}
+                onClick={() => {
+                  setIsMuted(false);
+                  // Use Vimeo API to unmute
+                  if (iframeRef.current?.contentWindow) {
+                    iframeRef.current.contentWindow.postMessage('{"method":"setVolume","value":1}', '*');
+                  }
+                }}
                 className="absolute top-4 right-4 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
                 aria-label="Unmute video"
               >
