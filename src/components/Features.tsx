@@ -102,7 +102,7 @@ const Features = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-medical-light relative overflow-hidden">
+    <section id="about" className="py-20 bg-medical-light">
       <div className="container mx-auto px-6">
         {/* Video Section */}
         <div className="mb-20">
