@@ -94,7 +94,7 @@ const Products = () => {
                   <img 
                     src={product.image} 
                     alt={product.title}
-                    className="w-64 h-64 mx-auto object-cover rounded-lg"
+                    className="w-80 h-80 mx-auto object-cover rounded-lg"
                   />
                 </div>
                 <CardTitle className="text-lg font-semibold text-foreground">
