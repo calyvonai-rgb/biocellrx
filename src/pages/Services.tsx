@@ -302,7 +302,7 @@ const Services = () => {
                     <img 
                       src={therapy.image} 
                       alt={therapy.title}
-                      className="w-56 h-56 mx-auto object-cover rounded-lg"
+                      className="w-72 h-72 mx-auto object-cover rounded-lg"
                     />
                   </div>
                   <div className="mb-2">

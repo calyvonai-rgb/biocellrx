@@ -22,10 +22,10 @@ const Hero = () => {
       <div className="relative z-10 w-full px-4 sm:px-6 pt-32 sm:pt-32 pb-12">
         <div className="w-full max-w-none sm:max-w-4xl mx-auto text-center">
           <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 text-white leading-tight px-2 mt-24 sm:mt-0">
-            Advanced Regenerative Medicine &{" "}
+            Advanced REGENERATIVE Medicine &{" "}
             <br />
             <span className="bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent">
-              Stem Cell Therapy
+              STEM CELL Therapy
             </span>
           </h1>
 
@@ -38,7 +38,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 sm:mb-16 px-4 sm:px-2 w-full max-w-2xl mx-auto">
             <Link to="/contact" className="w-full sm:w-auto flex-1 sm:flex-initial">
               <Button variant="medical" size="lg" className="group hover-scale text-base sm:text-lg px-6 py-4 sm:px-8 sm:py-5 w-full sm:w-auto min-w-[200px]">
-                Get Free Stem Cell Consultation
+                Get Free STEM CELL Consultation
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>

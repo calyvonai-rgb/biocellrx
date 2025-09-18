@@ -19,9 +19,9 @@ const Footer = () => {
             <div className="flex-1">
               <h3 className="text-2xl font-bold mb-3">BioCellRx</h3>
               <p className="text-white/70 leading-relaxed">
-                Leading the future of regenerative medicine with advanced stem cell 
+                Leading the future of REGENERATIVE medicine with advanced STEM CELL 
                 therapies and premium wellness products. Transforming lives through 
-                scientific innovation.
+                SCIENTIFIC innovation.
               </p>
             </div>
           </div>
@@ -99,7 +99,7 @@ const Footer = () => {
         <div className="border-t border-white/10 mt-8 pt-8">
           <div className="text-center">
             <p className="text-white/60 mb-4">
-              © 2025 BioCellRx. All rights reserved. | Advanced regenerative medicine solutions.
+              © 2025 BioCellRx. All rights reserved. | Advanced REGENERATIVE medicine solutions.
             </p>
             <div className="flex justify-center items-center gap-4 text-sm">
               <a 
