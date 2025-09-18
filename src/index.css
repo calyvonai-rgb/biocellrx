@@ -286,3 +286,37 @@ All colors MUST be HSL.
     overflow: hidden;
   }
 }
+
+/* Stem Cell Animations */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) rotate(0deg); 
+  }
+  25% { 
+    transform: translateY(-10px) translateX(5px) rotate(90deg); 
+  }
+  50% { 
+    transform: translateY(-20px) translateX(-3px) rotate(180deg); 
+  }
+  75% { 
+    transform: translateY(-10px) translateX(-8px) rotate(270deg); 
+  }
+}
+
+@keyframes drift {
+  0% { 
+    transform: translateX(0px) translateY(0px) rotate(0deg); 
+  }
+  25% { 
+    transform: translateX(15px) translateY(-8px) rotate(45deg); 
+  }
+  50% { 
+    transform: translateX(8px) translateY(-15px) rotate(90deg); 
+  }
+  75% { 
+    transform: translateX(-5px) translateY(-8px) rotate(135deg); 
+  }
+  100% { 
+    transform: translateX(0px) translateY(0px) rotate(180deg); 
+  }
+}

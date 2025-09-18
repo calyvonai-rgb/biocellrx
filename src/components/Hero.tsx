@@ -19,61 +19,58 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-28 pb-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 text-white leading-tight">
-            Advanced{" "}
+      <div className="relative z-10 w-full px-4 sm:px-6 pt-32 sm:pt-32 pb-12">
+        <div className="w-full max-w-none sm:max-w-4xl mx-auto text-center">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 text-white leading-tight px-2 mt-24 sm:mt-0">
+            Advanced Regenerative Medicine &{" "}
+            <br />
             <span className="bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent">
               Stem Cell Therapy
             </span>
-            {" "}& Regenerative Medicine
           </h1>
 
           {/* Subheadline with hot keywords */}
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-4">
-            Leading regenerative medicine clinic with FDA-approved stem cell treatments, MSC exosomal lysate, 
-            and advanced cellular therapy. <strong className="text-accent">95% success rate</strong> with 
-            <strong className="text-accent">20+ years</strong> of clinical experience in anti-aging, 
-            joint pain relief, and chronic condition treatment.
+          <p className="text-lg sm:text-xl md:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-10 w-full sm:max-w-4xl mx-auto leading-relaxed px-4 sm:px-2">
+            Leading the future of regenerative medicine with advanced stem cell therapies and premium wellness products. Transforming lives through scientific innovation.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 px-4">
-            <Link to="/contact">
-              <Button variant="medical" size="lg" className="group hover-scale">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 sm:mb-16 px-4 sm:px-2 w-full max-w-2xl mx-auto">
+            <Link to="/contact" className="w-full sm:w-auto flex-1 sm:flex-initial">
+              <Button variant="medical" size="lg" className="group hover-scale text-base sm:text-lg px-6 py-4 sm:px-8 sm:py-5 w-full sm:w-auto min-w-[200px]">
                 Get Free Stem Cell Consultation
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <a href="tel:+18585197305">
-              <Button variant="outline" size="lg" className="border-white bg-transparent text-white hover:bg-white hover:text-black hover-scale">
+            <a href="tel:+18585197305" className="w-full sm:w-auto flex-1 sm:flex-initial">
+              <Button variant="outline" size="lg" className="border-white bg-transparent text-white hover:bg-white hover:text-black hover-scale text-base sm:text-lg px-6 py-4 sm:px-8 sm:py-5 w-full sm:w-auto min-w-[180px]">
                 Call (858) 519-7305
               </Button>
             </a>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+          {/* Stats - Responsive Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto px-4">
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-full mb-3">
-                <Award className="w-6 h-6 text-accent" />
+              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white/10 rounded-full mb-3 sm:mb-4">
+                <Award className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
               </div>
-              <div className="text-white font-semibold">Clinically Advanced</div>
-              <div className="text-white/70 text-sm">Cellular Products</div>
+              <div className="text-white font-semibold text-base sm:text-lg">Clinically Advanced</div>
+              <div className="text-white/70 text-sm sm:text-base">Cellular Products</div>
             </div>
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-full mb-3">
-                <Users className="w-6 h-6 text-accent" />
+              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white/10 rounded-full mb-3 sm:mb-4">
+                <Users className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
               </div>
-              <div className="text-white font-semibold">20+ Years</div>
-              <div className="text-white/70 text-sm">Research & Development</div>
+              <div className="text-white font-semibold text-base sm:text-lg">20+ Years</div>
+              <div className="text-white/70 text-sm sm:text-base">Research & Development</div>
             </div>
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-full mb-3">
-                <Network className="w-6 h-6 text-accent" />
+              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white/10 rounded-full mb-3 sm:mb-4">
+                <Network className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
               </div>
-              <div className="text-white font-semibold">Network of</div>
-              <div className="text-white/70 text-sm">Expert Practitioners</div>
+              <div className="text-white font-semibold text-base sm:text-lg">Network of</div>
+              <div className="text-white/70 text-sm sm:text-base">Expert Practitioners</div>
             </div>
           </div>
         </div>

@@ -30,12 +30,6 @@ const SEO = ({
         "@id": "https://biocellrx.com/#medicalbusiness",
         "name": "BioCellRx",
         "url": "https://biocellrx.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://biocellrx.com/uploads/abc8e5e6-fdc8-4aeb-83a6-f51637383091.png",
-          "width": 400,
-          "height": 400
-        },
         "image": {
           "@type": "ImageObject",
           "url": ogImage,

@@ -18,8 +18,8 @@ const Analytics = () => {
   useEffect(() => {
     // Core Web Vitals tracking
     if (typeof window !== 'undefined' && 'web-vitals' in window) {
-      import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-        getCLS((metric) => {
+      import('web-vitals').then(({ onCLS, onFCP, onLCP, onTTFB }) => {
+        onCLS((metric) => {
           window.gtag && window.gtag('event', 'web_vitals', {
             event_category: 'Web Vitals',
             event_action: 'CLS',
@@ -28,16 +28,10 @@ const Analytics = () => {
           });
         });
 
-        getFID((metric) => {
-          window.gtag && window.gtag('event', 'web_vitals', {
-            event_category: 'Web Vitals',
-            event_action: 'FID',
-            value: metric.value,
-            metric_rating: metric.rating,
-          });
-        });
+        // onFID is deprecated in web-vitals v3, replaced by onINP
+        // Commenting out FID tracking for now
 
-        getFCP((metric) => {
+        onFCP((metric) => {
           window.gtag && window.gtag('event', 'web_vitals', {
             event_category: 'Web Vitals',
             event_action: 'FCP',
@@ -46,7 +40,7 @@ const Analytics = () => {
           });
         });
 
-        getLCP((metric) => {
+        onLCP((metric) => {
           window.gtag && window.gtag('event', 'web_vitals', {
             event_category: 'Web Vitals',
             event_action: 'LCP',
@@ -55,7 +49,7 @@ const Analytics = () => {
           });
         });
 
-        getTTFB((metric) => {
+        onTTFB((metric) => {
           window.gtag && window.gtag('event', 'web_vitals', {
             event_category: 'Web Vitals',
             event_action: 'TTFB',

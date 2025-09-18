@@ -195,7 +195,7 @@ const Products = () => {
                     <div className="pt-4">
                       <Link to="/contact">
                         <Button variant="medical" size="lg" className="w-full sm:w-auto">
-                          Learn More About Results
+                          Learn More
                           <ArrowRight className="w-5 h-5 ml-2" />
                         </Button>
                       </Link>

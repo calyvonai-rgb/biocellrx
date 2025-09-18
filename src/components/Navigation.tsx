@@ -13,6 +13,7 @@ const Navigation = () => {
     { name: "Home", href: "/", isRoute: true },
     { name: "Wellness and Biologics", href: "/services", isRoute: true },
     { name: "About", href: "/about", isRoute: true },
+    { name: "Knowledge Center", href: "/resources", isRoute: true },
     { name: "Contact", href: "/contact", isRoute: true },
   ];
 
@@ -29,12 +30,15 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center" onClick={closeMenu}>
+          <Link to="/" className="flex items-center space-x-2 sm:space-x-3" onClick={closeMenu}>
             <img 
-              src="/uploads/abc8e5e6-fdc8-4aeb-83a6-f51637383091.png" 
+              src="/uploads/logo.png" 
               alt="BioCellRx Logo" 
               className="h-10 sm:h-12 w-auto"
             />
+            <span className="text-lg sm:text-2xl font-bold text-foreground">
+              BioCellRx
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
