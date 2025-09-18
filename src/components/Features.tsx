@@ -7,8 +7,39 @@ import {
 } from "lucide-react";
 import VideoPlayer from "@/components/VideoPlayer";
 import whyChooseImage from "@/assets/white-biocellrx-logo.png";
+import { useEffect, useRef, useState } from "react";
 
 const Features = () => {
+  const videoRef = useRef<HTMLDivElement>(null);
+  const [isVideoInView, setIsVideoInView] = useState(false);
+  const [hasAutoplayed, setHasAutoplayed] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAutoplayed) {
+            setIsVideoInView(true);
+            setHasAutoplayed(true);
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the video is visible
+        rootMargin: '0px 0px -10% 0px' // Start a bit before the video is fully in view
+      }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, [hasAutoplayed]);
 
   const features = [
     {
@@ -35,7 +66,7 @@ const Features = () => {
     <section id="about" className="py-20 bg-medical-light">
       <div className="container mx-auto px-6">
         {/* Video Section */}
-        <div className="mb-20">
+        <div className="mb-20" ref={videoRef}>
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
               See Our Process in Action
@@ -46,7 +77,7 @@ const Features = () => {
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-accent/20">
               <div style={{padding:"56.25% 0 0 0", position:"relative"}} className="rounded-xl overflow-hidden video-container">
                 <iframe 
-                  src="https://player.vimeo.com/video/1119586822?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&controls=1" 
+                  src={`https://player.vimeo.com/video/1119586822?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&controls=1${isVideoInView ? '&autoplay=1&muted=1' : ''}`}
                   frameBorder="0" 
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
                   referrerPolicy="strict-origin-when-cross-origin" 
