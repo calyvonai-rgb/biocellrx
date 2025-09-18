@@ -31,7 +31,7 @@ const Hero = () => {
 
           {/* Subheadline with hot keywords */}
           <p className="text-lg sm:text-xl md:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-10 w-full sm:max-w-4xl mx-auto leading-relaxed px-4 sm:px-2">
-            Leading the future of REGENERATIVE medicine with advanced STEM CELL therapies and premium wellness products. Transforming lives through SCIENTIFIC innovation.
+            Leading the future of Regenerative medicine with advanced Stem Cell therapies and premium wellness products. Transforming lives through Scientific innovation.
           </p>
 
           {/* CTA Buttons */}

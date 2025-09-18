@@ -78,10 +78,10 @@ const Products = () => {
         {/* Cellular Products Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Cutting-Edge REGENERATIVE Products
+            Cutting-Edge Regenerative Products
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover our SCIENTIFICALLY-advanced cellular products designed to harness 
+            Discover our Scientifically-advanced cellular products designed to harness 
             your body's natural healing mechanisms
           </p>
         </div>

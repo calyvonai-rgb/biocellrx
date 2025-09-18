@@ -50,7 +50,7 @@ const Features = () => {
     },
     {
       icon: Shield,
-      title: "SCIENTIFICALLY-Backed Solutions",
+      title: "Scientifically-Backed Solutions",
       description: "We provide only the safest and most effective regenerative products, grounded in extensive research and clinical studies with regulatory compliance.",
       badge: "FDA Compliant"
     },

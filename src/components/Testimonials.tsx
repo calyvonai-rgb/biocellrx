@@ -11,7 +11,7 @@ const Testimonials = () => {
       rating: 5
     },
     {
-      quote: "As a physician, I'm impressed by BioCellRx's SCIENTIFIC approach and the consistent results I see in my patients who use their therapies.",
+      quote: "As a physician, I'm impressed by BioCellRx's Scientific approach and the consistent results I see in my patients who use their therapies.",
       name: "Dr. Michael R.",
       condition: "Sports Medicine Specialist",
       rating: 5
