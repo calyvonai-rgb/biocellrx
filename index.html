@@ -2,6 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- NUCLEAR OPTION: Force favicon refresh -->
+    <script>
+      // Clear favicon cache and force reload
+      const links = document.querySelectorAll("link[rel*='icon']");
+      links.forEach(link => link.parentNode.removeChild(link));
+      const head = document.getElementsByTagName('head')[0];
+      const link = document.createElement('link');
+      link.type = 'image/png';
+      link.rel = 'shortcut icon';
+      link.href = '/biocellrx-favicon.png?bust=' + Date.now();
+      head.appendChild(link);
+    </script>
     <!-- Aggressive favicon override with cache busting -->
     <link rel="icon" type="image/x-icon" href="/biocellrx-favicon.png?v=2">
     <link rel="icon" type="image/png" sizes="32x32" href="/biocellrx-favicon.png?v=2">
