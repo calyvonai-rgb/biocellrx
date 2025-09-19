@@ -68,9 +68,32 @@ const Features = () => {
         {/* Video Section */}
         <div className="mb-20" ref={videoRef}>
           <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              See Our Process in Action
-            </h3>
+              <h3 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                Cutting-Edge Regenerative Solutions
+              </h3>
+              <div className="max-w-4xl mx-auto text-lg text-muted-foreground mb-12 space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="text-left">
+                    <h4 className="font-semibold text-foreground mb-2">• Orthopedic Regeneration</h4>
+                    <p className="text-sm">Joint, cartilage, and musculoskeletal repair.</p>
+                  </div>
+                  <div className="text-left">
+                    <h4 className="font-semibold text-foreground mb-2">• Anti-Aging & Longevity</h4>
+                    <p className="text-sm">Cellular rejuvenation and vitality enhancement.</p>
+                  </div>
+                  <div className="text-left">
+                    <h4 className="font-semibold text-foreground mb-2">• Immune & Inflammatory Conditions</h4>
+                    <p className="text-sm">Supporting balance and recovery.</p>
+                  </div>
+                  <div className="text-left">
+                    <h4 className="font-semibold text-foreground mb-2">• Neurological Support</h4>
+                    <p className="text-sm">Promoting brain and nerve health.</p>
+                  </div>
+                </div>
+              </div>
+              <h3 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                See Our Process in Action
+              </h3>
           </div>
 
           <div className="max-w-4xl mx-auto">
