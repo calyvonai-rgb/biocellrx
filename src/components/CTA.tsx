@@ -1,22 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, FlaskConical, Dumbbell, Microscope } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CTA = () => {
   const healingCards = [
     {
-      icon: FlaskConical,
+      image: "/uploads/image.png", // Lab equipment image
       title: "Cutting-edge stem cell therapies",
       description: "tailored to your specific health needs. Personalized treatments for optimal results."
     },
     {
-      icon: Dumbbell,
+      image: "/uploads/image.png", // Athletic/fitness image  
       title: "Safe and effective treatments with minimal downtime.",
       description: "Get back to living your life, pain-free."
     },
     {
-      icon: Microscope,
+      image: "/uploads/image.png", // Cellular/microscope image
       title: "Harnessing the power of your own cells",
       description: "for natural healing. Natural solutions for lasting relief and wellness."
     }
@@ -38,24 +38,30 @@ const CTA = () => {
         </div>
         
         <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {healingCards.map((card, index) => {
-            const IconComponent = card.icon;
-            return (
-              <Card key={index} className="bg-white/10 border-accent/20 backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <IconComponent className="w-8 h-8 text-accent" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">
+          {healingCards.map((card, index) => (
+            <Card 
+              key={index} 
+              className="bg-white border-accent/30 backdrop-blur-sm hover:shadow-xl hover:shadow-accent/20 hover:scale-105 transition-all duration-500 group cursor-pointer overflow-hidden"
+            >
+              <CardContent className="p-0">
+                <div className="h-48 bg-white flex items-center justify-center overflow-hidden">
+                  <img 
+                    src={card.image} 
+                    alt={`${card.title} illustration`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6 text-center bg-white">
+                  <h3 className="text-xl font-semibold text-medical-dark mb-4 group-hover:text-accent transition-colors duration-300">
                     {card.title}
                   </h3>
-                  <p className="text-white/80 leading-relaxed">
+                  <p className="text-medical-dark/80 leading-relaxed">
                     {card.description}
                   </p>
-                </CardContent>
-              </Card>
-            );
-          })}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
         
         <div className="text-center">
