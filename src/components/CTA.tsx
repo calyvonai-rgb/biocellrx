@@ -2,34 +2,37 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import labTherapyImage from "@/assets/lab-therapy-image.png";
+import fitnessTherapyImage from "@/assets/fitness-therapy-image.png";
+import cellsTherapyImage from "@/assets/cells-therapy-image.png";
 
 const CTA = () => {
   const healingCards = [
     {
-      image: "/uploads/image.png", // Lab equipment image
+      image: labTherapyImage,
       title: "Cutting-edge stem cell therapies",
       description: "tailored to your specific health needs. Personalized treatments for optimal results."
     },
     {
-      image: "/uploads/image.png", // Athletic/fitness image  
+      image: fitnessTherapyImage,
       title: "Safe and effective treatments with minimal downtime.",
       description: "Get back to living your life, pain-free."
     },
     {
-      image: "/uploads/image.png", // Cellular/microscope image
+      image: cellsTherapyImage,
       title: "Harnessing the power of your own cells",
       description: "for natural healing. Natural solutions for lasting relief and wellness."
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-r from-medical-dark to-medical-dark/90 text-white">
+    <section className="py-20 bg-white text-medical-dark">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Discover Your Healing Potential?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-4xl mx-auto">
+          <p className="text-xl text-medical-dark/80 mb-8 max-w-4xl mx-auto">
             Unlocking our Body's Innate Healing potential with Stem Cell therapy solutions. 
             Non invasive Cell therapy applications such as local treatment or systemic intravenous 
             potentially treats damaged soft tissue, reduces inflammation and promotes immunomodulation 
@@ -41,14 +44,14 @@ const CTA = () => {
           {healingCards.map((card, index) => (
             <Card 
               key={index} 
-              className="bg-white border-accent/30 backdrop-blur-sm hover:shadow-xl hover:shadow-accent/20 hover:scale-105 transition-all duration-500 group cursor-pointer overflow-hidden"
+              className="bg-white border-2 border-accent/20 shadow-lg hover:shadow-2xl hover:shadow-accent/30 hover:scale-105 hover:border-accent/40 transition-all duration-500 group cursor-pointer overflow-hidden rounded-xl"
             >
               <CardContent className="p-0">
-                <div className="h-48 bg-white flex items-center justify-center overflow-hidden">
+                <div className="h-64 bg-white flex items-center justify-center overflow-hidden">
                   <img 
                     src={card.image} 
                     alt={`${card.title} illustration`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 p-4"
                   />
                 </div>
                 <div className="p-6 text-center bg-white">
