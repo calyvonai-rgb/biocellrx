@@ -44,23 +44,15 @@ const CTA = () => {
           {healingCards.map((card, index) => (
             <Card 
               key={index} 
-              className="bg-white border-2 border-accent/20 shadow-lg hover:shadow-2xl hover:shadow-accent/30 hover:scale-105 hover:border-accent/40 transition-all duration-500 group cursor-pointer overflow-hidden rounded-xl"
+              className="bg-white shadow-lg hover:shadow-2xl hover:shadow-accent/30 hover:scale-105 transition-all duration-500 group cursor-pointer overflow-hidden rounded-xl border-0"
             >
               <CardContent className="p-0">
-                <div className="h-64 bg-white flex items-center justify-center overflow-hidden">
+                <div className="h-80 bg-white flex items-center justify-center overflow-hidden">
                   <img 
                     src={card.image} 
                     alt={`${card.title} illustration`}
-                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 p-4"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                </div>
-                <div className="p-6 text-center bg-white">
-                  <h3 className="text-xl font-semibold text-medical-dark mb-4 group-hover:text-accent transition-colors duration-300">
-                    {card.title}
-                  </h3>
-                  <p className="text-medical-dark/80 leading-relaxed">
-                    {card.description}
-                  </p>
                 </div>
               </CardContent>
             </Card>
