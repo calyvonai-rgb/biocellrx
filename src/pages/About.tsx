@@ -18,7 +18,7 @@ import eloisaPhoto from "@/assets/eloisa-photo-new.jpg";
 import missionImage from "@/assets/mission-image.jpg";
 import conditionsImage from "@/assets/conditions-treatment-image.jpg";
 import healingPotentialImage from "@/assets/healing-potential-image.jpg";
-import fdaDiagnosisList from "@/assets/fda-diagnosis-list.jpg";
+import fdaDiagnosisList from "@/assets/fda-diagnosis-list-complete.png";
 
 const About = () => {
   const stats = [
