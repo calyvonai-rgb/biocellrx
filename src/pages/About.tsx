@@ -253,13 +253,6 @@ const About = () => {
           </div>
 
           <div className="text-center mb-16">
-            <div className="mb-12">
-              <img 
-                src="/uploads/fda-approved-conditions.png" 
-                alt="FDA approved conditions for therapeutics using umbilical cord blood MSCs"
-                className="w-full max-w-5xl mx-auto rounded-2xl shadow-lg"
-              />
-            </div>
             <p className="text-muted-foreground mb-8 max-w-3xl mx-auto">
               This list is not exhaustive. Based on your individual medical history and symptoms, our medical professionals may recommend stem cell therapy for other conditions.
             </p>
