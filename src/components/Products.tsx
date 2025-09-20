@@ -75,50 +75,6 @@ const Products = () => {
   return (
     <section id="products" className="py-20 bg-background">
       <div className="container mx-auto px-6">
-        {/* Cellular Products Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Cutting-Edge Regenerative Products
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover our Scientifically-advanced cellular products designed to harness 
-            your body's natural healing mechanisms
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-          {cellularProducts.map((product, index) => (
-            <Card key={index} className="group hover:shadow-medical transition-all duration-300 border-0 bg-white product-golden-hover animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-              <CardHeader className="text-center pb-4">
-                <div className="mb-4">
-                  <img 
-                    src={product.image} 
-                    alt={product.title}
-                    className="w-80 h-80 mx-auto object-cover rounded-lg"
-                  />
-                </div>
-                <CardTitle className="text-lg font-semibold text-foreground">
-                  {product.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                  {product.description}
-                </p>
-                <div className="space-y-2">
-                  {product.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center justify-center text-sm">
-                      <CheckCircle className="w-4 h-4 text-accent mr-2 flex-shrink-0" />
-                      <span className="text-muted-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-
         {/* Wellness Results Section */}
         <div className="bg-gradient-to-r from-accent/5 to-accent/10 rounded-3xl p-8 md:p-12 mt-20">
           <div>
