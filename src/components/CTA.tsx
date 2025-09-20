@@ -16,11 +16,22 @@ const CTA = () => {
         </div>
         
         <div className="mb-12 flex justify-center">
-          <img 
-            src={healingPotentialCards} 
-            alt="Healing potential with stem cell therapy solutions"
-            className="w-full max-w-4xl h-auto object-contain"
-          />
+          <div className="relative w-full max-w-4xl">
+            <img 
+              src={healingPotentialCards} 
+              alt="Healing potential with stem cell therapy solutions"
+              className="w-full h-auto object-contain"
+            />
+            {/* Interactive overlay areas for each card */}
+            <div className="absolute inset-0 flex">
+              {/* Left card hover area */}
+              <div className="flex-1 cursor-pointer hover:bg-white/10 transition-all duration-300 hover:scale-105 rounded-lg"></div>
+              {/* Center card hover area */}
+              <div className="flex-1 cursor-pointer hover:bg-white/10 transition-all duration-300 hover:scale-105 rounded-lg mx-2"></div>
+              {/* Right card hover area */}
+              <div className="flex-1 cursor-pointer hover:bg-white/10 transition-all duration-300 hover:scale-105 rounded-lg"></div>
+            </div>
+          </div>
         </div>
         
         
