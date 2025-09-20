@@ -85,7 +85,7 @@ const Resources = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Scientific Innovation–Grounded in cutting-edge research and clinical expertise. Global Standards–Adhering to the highest safety and quality protocols.
+              Access comprehensive knowledge, clinical documentation, and educational materials about regenerative medicine
             </p>
             <Link to="/contact">
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-black font-semibold">

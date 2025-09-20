@@ -18,7 +18,6 @@ import eloisaPhoto from "@/assets/eloisa-photo-new.jpg";
 import missionImage from "@/assets/mission-image.jpg";
 import conditionsImage from "@/assets/conditions-treatment-image.jpg";
 import healingPotentialImage from "@/assets/healing-potential-image.jpg";
-import fdaConditionsList from "@/assets/fda-conditions-list.png";
 
 const About = () => {
   const stats = [
@@ -129,7 +128,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                Our Science Mission
+                Our Mission
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 At BioCellRx, our team of dedicated medical professionals and scientists has been at the forefront of regenerative medicine, conducting rigorous research and achieving breakthrough results in cellular therapies.
@@ -257,15 +256,6 @@ const About = () => {
             <p className="text-muted-foreground mb-8 max-w-3xl mx-auto">
               This list is not exhaustive. Based on your individual medical history and symptoms, our medical professionals may recommend stem cell therapy for other conditions.
             </p>
-            
-            <div className="mb-8">
-              <img 
-                src={fdaConditionsList} 
-                alt="FDA approved conditions for therapeutics using umbilical cord blood MSCs"
-                className="w-full max-w-5xl mx-auto rounded-2xl shadow-lg"
-              />
-            </div>
-            
             <Link to="/services">
               <Button variant="medical" size="lg">
                 Explore Your Treatment Options
