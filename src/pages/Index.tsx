@@ -21,10 +21,8 @@ const Index = () => {
         <Hero />
         <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-pulse text-accent">Loading...</div></div>}>
           <Features />
-          <Products />
           <ResourcesPreview />
           <Testimonials />
-          <FAQ />
           <CTA />
         </Suspense>
         <Footer />
