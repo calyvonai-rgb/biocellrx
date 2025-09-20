@@ -135,7 +135,7 @@ const Services = () => {
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in [animation-delay:0.2s] px-4">
-              Science-Driven. Biopharmaceuticals designed to optimize cellular health.
+              Comprehensive regenerative medicine services and cutting-edge products designed to support your body's natural healing processes
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in [animation-delay:0.4s] px-4">
               <a href="tel:+18585197305">
