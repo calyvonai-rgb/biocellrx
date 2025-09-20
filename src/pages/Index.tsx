@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 
 // Lazy load non-critical components
 const Features = lazy(() => import("@/components/Features"));
+const RegenerativeSolutions = lazy(() => import("@/components/RegenerativeSolutions"));
 const Products = lazy(() => import("@/components/Products"));
 const ResourcesPreview = lazy(() => import("@/components/ResourcesPreview"));
 const Testimonials = lazy(() => import("@/components/Testimonials"));
@@ -20,6 +21,7 @@ const Index = () => {
         <Navigation />
         <Hero />
         <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-pulse text-accent">Loading...</div></div>}>
+          <RegenerativeSolutions />
           <Features />
           <Products />
           <ResourcesPreview />

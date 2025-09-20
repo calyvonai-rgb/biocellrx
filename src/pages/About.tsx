@@ -93,7 +93,7 @@ const About = () => {
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in [animation-delay:0.2s] px-4">
-              Standing at the intersection of medical science and technological advancement, 
+              Standing at the intersection of medical Science and technological advancement, 
               revolutionizing health and wellness for over <span className="text-accent font-semibold">two decades</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in [animation-delay:0.4s] px-4">
