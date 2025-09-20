@@ -388,10 +388,10 @@ const Contact = () => {
         <div className="container mx-auto px-6">
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Ready to Begin Your Wellness Journey?
+              Committed to delivering safe, effective, and transformative treatments.
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Don't wait to start feeling your best. Our team is standing by to help you discover the transformative power of regenerative medicine.
+              Our team is standing by to help answer your questions on Regenerative options available.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="tel:+18585197305">
