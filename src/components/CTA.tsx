@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import labTherapyImage from "@/assets/lab-therapy-image.png";
 import fitnessTherapyImage from "@/assets/fitness-therapy-image.png";
 import cellsTherapyImage from "@/assets/cells-therapy-image.png";
+import healingPotentialCards from "@/assets/healing-potential-cards.png";
 
 const CTA = () => {
   const healingCards = [
@@ -38,6 +39,14 @@ const CTA = () => {
             potentially treats damaged soft tissue, reduces inflammation and promotes immunomodulation 
             for many unmet medical conditions.
           </p>
+        </div>
+        
+        <div className="mb-12 flex justify-center">
+          <img 
+            src={healingPotentialCards} 
+            alt="Healing potential with stem cell therapy solutions"
+            className="w-full max-w-4xl h-auto object-contain"
+          />
         </div>
         
         <div className="grid md:grid-cols-3 gap-8 mb-12">
