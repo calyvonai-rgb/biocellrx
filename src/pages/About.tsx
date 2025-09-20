@@ -14,7 +14,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import labHeroBg from "@/assets/lab-hero-bg.jpg";
-import eloisaPhoto from "@/assets/eloisa-photo-new.jpg";
+import eloisaPhoto from "@/assets/eloisa-photo-updated.jpg";
 import missionImage from "@/assets/mission-image.jpg";
 import conditionsImage from "@/assets/conditions-treatment-image.jpg";
 import healingPotentialImage from "@/assets/healing-potential-image.jpg";
