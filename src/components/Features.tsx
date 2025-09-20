@@ -148,14 +148,36 @@ const Features = () => {
                           </Badge>
                           
                           {/* Title with Stagger Animation */}
-                          <h4 className="text-sm md:text-lg font-bold mb-2 md:mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
-                            {feature.title}
-                          </h4>
-                          
-                          {/* Description with Fade Effect */}
-                          <p className="text-xs md:text-sm text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
-                            {feature.description}
-                          </p>
+              <h4 className="text-sm md:text-lg font-bold mb-2 md:mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
+                {feature.title}
+              </h4>
+              
+              {/* Description with Fade Effect */}
+              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                {feature.description}
+              </p>
+              
+              {/* Additional content for Cutting Edge section */}
+              {feature.title === "Industry-Leading Innovation" && (
+                <div className="mt-3 text-xs text-left space-y-1">
+                  <div className="flex items-start">
+                    <span className="text-primary mr-1">•</span>
+                    <span className="text-muted-foreground">Orthopedic Regeneration – Joint, cartilage, and musculoskeletal repair.</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="text-primary mr-1">•</span>
+                    <span className="text-muted-foreground">Anti-Aging & Longevity – Cellular rejuvenation and vitality enhancement.</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="text-primary mr-1">•</span>
+                    <span className="text-muted-foreground">Immune & Inflammatory Conditions – Supporting balance and recovery.</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="text-primary mr-1">•</span>
+                    <span className="text-muted-foreground">Neurological Support – Promoting brain and nerve health.</span>
+                  </div>
+                </div>
+              )}
                         </CardContent>
                       </Card>
                     ))}

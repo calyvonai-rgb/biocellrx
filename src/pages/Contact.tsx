@@ -391,7 +391,7 @@ const Contact = () => {
               Ready to Begin Your Wellness Journey?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Don't wait to start feeling your best. Our team is standing by to help you discover the transformative power of regenerative medicine.
+              Committed to delivering safe, effective, and transformative treatments. Our team is standing by to help answer your questions on Regenerative options available.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="tel:+18585197305">

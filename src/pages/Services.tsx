@@ -190,7 +190,7 @@ const Services = () => {
               Wellness Support
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto px-4">
-              Our team will support you in building a healthier you with the latest innovative treatments
+              Science-Driven. Biopharmaceuticals designed to optimize cellular health.
             </p>
           </div>
 
