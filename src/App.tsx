@@ -8,6 +8,7 @@ import { HelmetProvider } from "react-helmet-async";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import CookieConsent from "@/components/CookieConsent";
 import Analytics from "@/components/Analytics";
+import SecurityHeaders from "@/components/SecurityHeaders";
 import RedirectHandler from "./components/RedirectHandler";
 import { setupGlobalErrorHandling } from "./utils/errorHandler";
 import Index from "./pages/Index";
@@ -36,6 +37,7 @@ const App = () => {
   return (
     <ErrorBoundary>
       <HelmetProvider>
+        <SecurityHeaders />
         <QueryClientProvider client={queryClient}>
           <TooltipProvider>
             <Toaster />

@@ -35,6 +35,21 @@ const Contact = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    
+    // Implement input length limits
+    const maxLengths: Record<string, number> = {
+      firstName: 50,
+      lastName: 50,
+      email: 254,
+      phone: 20,
+      primaryHealthConcern: 200,
+      additionalInfo: 1000
+    };
+    
+    if (maxLengths[name] && value.length > maxLengths[name]) {
+      return; // Don't update if exceeds limit
+    }
+    
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -70,12 +85,24 @@ const Contact = () => {
       return;
     }
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
+    // Enhanced email validation
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(formData.email) || formData.email.length > 254) {
       toast({
         title: "Error",
         description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Phone number validation
+    const phoneDigits = formData.phone.replace(/\D/g, '');
+    const phoneRegex = /^[\+]?[1]?[\s\-\.]?[\(]?[0-9]{3}[\)]?[\s\-\.]?[0-9]{3}[\s\-\.]?[0-9]{4}$/;
+    if (!phoneRegex.test(formData.phone) || phoneDigits.length < 10 || phoneDigits.length > 15) {
+      toast({
+        title: "Error",
+        description: "Please enter a valid phone number (e.g., (555) 123-4567).",
         variant: "destructive",
       });
       return;
