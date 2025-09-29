@@ -97,102 +97,9 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* Stem Cell Therapy Benefits */}
+      {/* Educational Resources Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Benefits of Stem Cell Therapy
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-              Stem cell therapy can be very helpful in managing long-term, chronic conditions, including conditions that cause pain and other symptoms
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-            <Card className="border-0 shadow-medical hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold text-foreground">Arthritis</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Helps repair damaged joint cartilage and reduces inflammation in and around joints
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-0 shadow-medical hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold text-foreground">Cancer</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Stem cell transplants can treat leukemia and lymphoma, replacing cells damaged by disease
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-0 shadow-medical hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold text-foreground">Parkinson's Disease</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  May repair nerve damage and replace dopamine-producing brain cells destroyed by the disease
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-0 shadow-medical hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold text-foreground">Heart Disease</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Cardiac regeneration helps patients with heart attacks, heart failure, and vessel disease
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-0 shadow-medical hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold text-foreground">Multiple Sclerosis</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Helps repair neurological damage, travels to brain lesions, and controls immune system activity
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-0 shadow-medical hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold text-foreground">Diabetes</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  May help replace missing or damaged beta cells that produce insulin in the pancreas
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-0 shadow-medical hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold text-foreground">Fibromyalgia</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Modulates inflammatory responses and repairs damaged nerve cells that misfire pain signals
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-0 shadow-medical hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold text-foreground">Kidney Disease</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Transforms into kidney tissue to treat acute and chronic kidney injury and disease
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Educational Infographics - Vertical Layout */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
               Educational Resources
@@ -387,7 +294,6 @@ const Resources = () => {
           </div>
         </div>
       </section>
-
 
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
