@@ -65,7 +65,7 @@ const Features = () => {
   return (
     <section id="about" className="py-20 bg-medical-light">
       <div className="container mx-auto px-6">
-        {/* Video Section */}
+        {/* Video Section - Ready for new video */}
         <div className="mb-20" ref={videoRef}>
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
@@ -76,28 +76,7 @@ const Features = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-accent/20">
               <div style={{padding:"56.25% 0 0 0", position:"relative"}} className="rounded-xl overflow-hidden video-container">
-                {isVideoInView ? (
-                  <iframe 
-                    src="https://player.vimeo.com/video/1119586822?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&controls=1&autoplay=1&muted=1"
-                    frameBorder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                    referrerPolicy="strict-origin-when-cross-origin" 
-                    style={{position:"absolute", top:0, left:0, width:"100%", height:"100%"}} 
-                    title="BIOCELL RX"
-                    className="rounded-xl"
-                  />
-                ) : (
-                  <div className="absolute inset-0 bg-medical-dark/10 rounded-xl flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z"/>
-                        </svg>
-                      </div>
-                      <p className="text-muted-foreground">Loading video...</p>
-                    </div>
-                  </div>
-                )}
+                {/* Video will be added here */}
               </div>
             </div>
           </div>
