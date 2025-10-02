@@ -41,18 +41,16 @@ const Features = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-accent/20">
-              <div style={{padding:"75% 0 0 0", position:"relative"}}>
-                <iframe 
-                  src="https://player.vimeo.com/video/1119586822?autoplay=1&muted=1&controls=1&loop=0"
-                  frameBorder="0" 
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-                  referrerPolicy="strict-origin-when-cross-origin" 
-                  style={{position:"absolute", top:0, left:0, width:"100%", height:"100%"}}
-                  title="BioCellRx Process"
-                  className="rounded-2xl shadow-xl"
-                />
-              </div>
+            <div style={{padding:"75% 0 0 0", position:"relative"}}>
+              <iframe 
+                src="https://player.vimeo.com/video/1119586822?autoplay=1&muted=1&controls=1&loop=0"
+                frameBorder="0" 
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                style={{position:"absolute", top:0, left:0, width:"100%", height:"100%"}}
+                title="BioCellRx Process"
+                className="rounded-2xl shadow-xl"
+              />
             </div>
           </div>
         </div>
