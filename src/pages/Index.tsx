@@ -3,9 +3,7 @@ import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
-
-// Lazy load non-critical components
-const Features = lazy(() => import("@/components/Features"));
+import Features from "@/components/Features";
 const RegenerativeSolutions = lazy(() => import("@/components/RegenerativeSolutions"));
 const Products = lazy(() => import("@/components/Products"));
 const ResourcesPreview = lazy(() => import("@/components/ResourcesPreview"));

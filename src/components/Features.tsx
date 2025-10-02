@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from "react";
 
 const Features = () => {
   const videoRef = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
 
   useEffect(() => {
@@ -64,26 +65,29 @@ const Features = () => {
 
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-accent/20">
-              <div style={{padding:"56.25% 0 0 0", position:"relative"}} className="rounded-xl overflow-hidden video-container">
+              <div style={{padding:"75% 0 0 0", position:"relative"}} className="video-container">
                 {isVideoVisible ? (
                   <iframe 
-                    src="https://player.vimeo.com/video/1119586822?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&controls=1&autoplay=1&muted=1&background=1"
+                    ref={iframeRef}
+                    src="https://player.vimeo.com/video/1119586822?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&controls=1&autoplay=1&muted=1"
                     frameBorder="0" 
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
                     referrerPolicy="strict-origin-when-cross-origin" 
-                    style={{position:"absolute", top:0, left:0, width:"100%", height:"100%"}} 
+                    style={{position:"absolute", top:0, left:0, width:"100%", height:"100%"}}
                     title="BioCellRx Process"
-                    className="rounded-xl"
+                    className="rounded-2xl shadow-xl video-fill"
                   />
                 ) : (
-                  <div className="absolute inset-0 bg-medical-dark/10 rounded-xl flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z"/>
-                        </svg>
-                      </div>
-                      <p className="text-muted-foreground">Loading video...</p>
+                  <div 
+                    className="absolute inset-0 bg-gray-100 flex items-center justify-center video-fill"
+                    style={{
+                      backgroundImage: `url('https://i.vimeocdn.com/video/1119586822-1234567890_1280x720.jpg')`, 
+                      backgroundSize: 'cover', 
+                      backgroundPosition: 'center'
+                    }}
+                  >
+                    <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center">
+                      <div className="w-0 h-0 border-l-[12px] border-l-black border-y-[8px] border-y-transparent ml-1"></div>
                     </div>
                   </div>
                 )}
