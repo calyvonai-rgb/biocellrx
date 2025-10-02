@@ -28,9 +28,9 @@ const VitalityVideo = () => {
         {isVideoVisible ? (
           <iframe 
             ref={iframeRef}
-            src="https://player.vimeo.com/video/1117754950?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&controls=1&autoplay=1&muted=1&background=1"
+            src="https://player.vimeo.com/video/1117754950?autoplay=1&muted=1&controls=1&loop=0&autopause=0"
             frameBorder="0" 
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
             referrerPolicy="strict-origin-when-cross-origin" 
             style={{position:"absolute", top:0, left:0, width:"100%", height:"100%"}}
             title="Bio cell RX"
