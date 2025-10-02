@@ -11,35 +11,24 @@ import { useEffect, useRef, useState } from "react";
 
 const Features = () => {
   const videoRef = useRef<HTMLDivElement>(null);
-  const [isVideoInView, setIsVideoInView] = useState(false);
-  const [hasAutoplayed, setHasAutoplayed] = useState(false);
+  const [isVideoVisible, setIsVideoVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAutoplayed) {
-            setIsVideoInView(true);
-            setHasAutoplayed(true);
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVideoVisible(true);
+        }
       },
-      {
-        threshold: 0.5, // Trigger when 50% of the video is visible
-        rootMargin: '0px 0px -10% 0px' // Start a bit before the video is fully in view
-      }
+      { threshold: 0.3 }
     );
 
     if (videoRef.current) {
       observer.observe(videoRef.current);
     }
 
-    return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
-      }
-    };
-  }, [hasAutoplayed]);
+    return () => observer.disconnect();
+  }, []);
 
   const features = [
     {
@@ -76,7 +65,7 @@ const Features = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-accent/20">
               <div style={{padding:"56.25% 0 0 0", position:"relative"}} className="rounded-xl overflow-hidden video-container">
-                {isVideoInView ? (
+                {isVideoVisible ? (
                   <iframe 
                     src="https://player.vimeo.com/video/1119586822?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&controls=1&autoplay=1&muted=1&background=1"
                     frameBorder="0" 
