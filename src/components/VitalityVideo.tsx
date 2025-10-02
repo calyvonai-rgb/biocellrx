@@ -8,11 +8,11 @@ const VitalityVideo = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !isVideoVisible) {
+        if (entry.isIntersecting) {
           setIsVideoVisible(true);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     if (videoRef.current) {
@@ -20,7 +20,7 @@ const VitalityVideo = () => {
     }
 
     return () => observer.disconnect();
-  }, [isVideoVisible]);
+  }, []);
 
   return (
     <div className="w-full" ref={videoRef}>
