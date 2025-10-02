@@ -18,9 +18,9 @@ const Index = () => {
       <div className="min-h-screen bg-background">
         <Navigation />
         <Hero />
+        <Features />
         <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-pulse text-accent">Loading...</div></div>}>
           <RegenerativeSolutions />
-          <Features />
           <Products />
           <ResourcesPreview />
           <Testimonials />
