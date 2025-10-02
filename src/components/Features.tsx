@@ -5,42 +5,9 @@ import {
   Shield,
   Zap
 } from "lucide-react";
-import VideoPlayer from "@/components/VideoPlayer";
 import whyChooseImage from "@/assets/white-biocellrx-logo.png";
-import { useEffect, useRef, useState } from "react";
 
 const Features = () => {
-  const videoRef = useRef<HTMLDivElement>(null);
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-  const [isVideoVisible, setIsVideoVisible] = useState(false);
-
-  useEffect(() => {
-    console.log("Features video component mounted");
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        console.log("Features IntersectionObserver triggered:", entry.isIntersecting);
-        if (entry.isIntersecting) {
-          console.log("Features video should load now");
-          setIsVideoVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (videoRef.current) {
-      console.log("Features videoRef exists, observing");
-      observer.observe(videoRef.current);
-    } else {
-      console.log("Features videoRef is null!");
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    console.log("Features isVideoVisible changed to:", isVideoVisible);
-  }, [isVideoVisible]);
-
   const features = [
     {
       icon: Users,
@@ -65,8 +32,8 @@ const Features = () => {
   return (
     <section id="about" className="py-20 bg-medical-light">
       <div className="container mx-auto px-6">
-        {/* Video Section - Ready for new video */}
-        <div className="mb-20" ref={videoRef}>
+        {/* Video Section */}
+        <div className="mb-20">
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
               See Our Process in Action
@@ -75,32 +42,16 @@ const Features = () => {
 
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-accent/20">
-              <div style={{padding:"75% 0 0 0", position:"relative"}} className="video-container">
-                {isVideoVisible ? (
-                  <iframe 
-                    ref={iframeRef}
-                    src="https://player.vimeo.com/video/1119586822?autoplay=1&muted=1&controls=1&loop=0&autopause=0"
-                    frameBorder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-                    referrerPolicy="strict-origin-when-cross-origin" 
-                    style={{position:"absolute", top:0, left:0, width:"100%", height:"100%"}}
-                    title="BioCellRx Process"
-                    className="rounded-2xl shadow-xl video-fill"
-                  />
-                ) : (
-                  <div 
-                    className="absolute inset-0 bg-gray-100 flex items-center justify-center video-fill"
-                    style={{
-                      backgroundImage: `url('https://i.vimeocdn.com/video/1119586822-1234567890_1280x720.jpg')`, 
-                      backgroundSize: 'cover', 
-                      backgroundPosition: 'center'
-                    }}
-                  >
-                    <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center">
-                      <div className="w-0 h-0 border-l-[12px] border-l-black border-y-[8px] border-y-transparent ml-1"></div>
-                    </div>
-                  </div>
-                )}
+              <div style={{padding:"75% 0 0 0", position:"relative"}}>
+                <iframe 
+                  src="https://player.vimeo.com/video/1119586822?autoplay=1&muted=1&controls=1&loop=0"
+                  frameBorder="0" 
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  style={{position:"absolute", top:0, left:0, width:"100%", height:"100%"}}
+                  title="BioCellRx Process"
+                  className="rounded-2xl shadow-xl"
+                />
               </div>
             </div>
           </div>
