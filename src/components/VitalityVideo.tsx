@@ -6,9 +6,12 @@ const VitalityVideo = () => {
   const [isVideoVisible, setIsVideoVisible] = useState(false);
 
   useEffect(() => {
+    console.log("VitalityVideo component mounted");
     const observer = new IntersectionObserver(
       ([entry]) => {
+        console.log("VitalityVideo IntersectionObserver triggered:", entry.isIntersecting);
         if (entry.isIntersecting) {
+          console.log("VitalityVideo should load now");
           setIsVideoVisible(true);
         }
       },
@@ -16,11 +19,18 @@ const VitalityVideo = () => {
     );
 
     if (videoRef.current) {
+      console.log("VitalityVideo videoRef exists, observing");
       observer.observe(videoRef.current);
+    } else {
+      console.log("VitalityVideo videoRef is null!");
     }
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    console.log("VitalityVideo isVideoVisible changed to:", isVideoVisible);
+  }, [isVideoVisible]);
 
   return (
     <div className="w-full" ref={videoRef}>

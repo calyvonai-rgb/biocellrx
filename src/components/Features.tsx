@@ -15,9 +15,12 @@ const Features = () => {
   const [isVideoVisible, setIsVideoVisible] = useState(false);
 
   useEffect(() => {
+    console.log("Features video component mounted");
     const observer = new IntersectionObserver(
       ([entry]) => {
+        console.log("Features IntersectionObserver triggered:", entry.isIntersecting);
         if (entry.isIntersecting) {
+          console.log("Features video should load now");
           setIsVideoVisible(true);
         }
       },
@@ -25,11 +28,18 @@ const Features = () => {
     );
 
     if (videoRef.current) {
+      console.log("Features videoRef exists, observing");
       observer.observe(videoRef.current);
+    } else {
+      console.log("Features videoRef is null!");
     }
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    console.log("Features isVideoVisible changed to:", isVideoVisible);
+  }, [isVideoVisible]);
 
   const features = [
     {
