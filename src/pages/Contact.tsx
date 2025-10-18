@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { useEffect, useRef, useCallback } from "react";
+
 import { 
   Phone,
   ArrowRight,
@@ -14,55 +14,6 @@ import labHeroBg from "@/assets/lab-hero-bg.jpg";
 import contactConsultationImage from "@/assets/contact-consultation-image.jpg";
 
 const Contact = () => {
-  const handleIframeRef = useCallback((node: HTMLIFrameElement | null) => {
-    if (!node) return;
-
-    console.log('Iframe mounted, applying visibility fixes');
-    
-    // Force visibility styles with dynamic height
-    const forceVisible = () => {
-      node.style.setProperty('display', 'block', 'important');
-      node.style.setProperty('visibility', 'visible', 'important');
-      node.style.setProperty('opacity', '1', 'important');
-    };
-
-    forceVisible();
-
-    // Watch for any style changes
-    const observer = new MutationObserver(() => {
-      forceVisible();
-    });
-
-    observer.observe(node, {
-      attributes: true,
-      attributeFilter: ['style', 'class'],
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
-  // Listen for height messages from the iframe
-  useEffect(() => {
-    const handleMessage = (event: MessageEvent) => {
-      // Verify origin for security
-      if (event.origin !== 'https://api.leadconnectorhq.com') return;
-      
-      // Handle height resize messages
-      if (event.data.type === 'resize' && event.data.height) {
-        const iframe = document.getElementById('inline-Da3qqC7jNyKxwGeEQ9ex') as HTMLIFrameElement;
-        if (iframe) {
-          iframe.style.height = `${event.data.height}px`;
-          console.log(`Iframe height adjusted to: ${event.data.height}px`);
-        }
-      }
-    };
-    
-    window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
-  }, []);
-
   const contactInfo = [
     {
       icon: Phone,
@@ -194,30 +145,18 @@ const Contact = () => {
             </div>
 
             {/* Right Side - Contact Form */}
-            <div className="bg-white rounded-2xl border border-border shadow-lg animate-fade-in [animation-delay:0.3s] overflow-hidden" style={{height: 'auto', minHeight: '400px', position: 'relative'}}>
+            <div className="bg-white rounded-2xl border border-border shadow-lg animate-fade-in [animation-delay:0.3s] overflow-hidden">
               <iframe
-                ref={handleIframeRef}
                 src="https://api.leadconnectorhq.com/widget/form/Da3qqC7jNyKxwGeEQ9ex"
                 className="w-full border-0"
                 style={{
-                  width:'100%', 
-                  height:'1000px',
-                  border:'none'
+                  width: '100%',
+                  height: '689px',
+                  border: 'none'
                 }}
-                scrolling="no"
-                id="inline-Da3qqC7jNyKxwGeEQ9ex" 
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="BioCellRx WF"
-                data-height="689"
-                data-layout-iframe-id="inline-Da3qqC7jNyKxwGeEQ9ex"
-                data-form-id="Da3qqC7jNyKxwGeEQ9ex"
+                id="inline-Da3qqC7jNyKxwGeEQ9ex"
                 title="BioCellRx WF"
+                loading="eager"
               />
             </div>
           </div>
