@@ -34,7 +34,7 @@ const Resources = () => {
     },
     {
       question: "Are stem cell treatments safe?",
-      answer: "Yes, our stem cell treatments are rigorously tested and meet the highest safety standards. All our cellular products are sourced from FDA-registered laboratories and undergo extensive quality control testing. Our medical professionals carefully evaluate each patient to ensure treatment safety and efficacy."
+      answer: "Yes, our stem cell treatments are rigorously tested and meet the highest safety standards. All our cellular products are sourced from certified laboratories and undergo extensive quality control testing. Our medical professionals carefully evaluate each patient to ensure treatment safety and efficacy."
     },
     {
       question: "What conditions can be treated with regenerative therapy?",
@@ -209,7 +209,7 @@ const Resources = () => {
                   Joint Conditions Therapy
                 </h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Specialized regenerative medicine solutions for joint conditions including knee pain, joint pain, and osteoarthritis, with detailed FDA criteria and clinical trial information for effective treatment outcomes.
+                  Specialized regenerative medicine solutions for joint conditions including knee pain, joint pain, and osteoarthritis, with detailed clinical criteria and research information for effective treatment outcomes.
                 </p>
               </div>
               <div>
@@ -232,7 +232,7 @@ const Resources = () => {
                   BioCellRx Training Program
                 </h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Comprehensive clinical training covering clinical research, therapeutic applications, and feedback guidance. Learn about clinical trials, current studies on regenerative medicine, and FDA guidelines for consent and risk assessment.
+                  Comprehensive clinical training covering clinical research, therapeutic applications, and feedback guidance. Learn about clinical trials, current studies on regenerative medicine, and clinical guidelines for consent and risk assessment.
                 </p>
               </div>
               <div className="lg:order-1">

@@ -13,8 +13,8 @@ const FAQ = () => {
       answer: "BioCellRx utilizes the most advanced cellular products available, including MSC Exosomal Lysate, CBSC cryo, and fresh MSC stem cells. Our therapies are backed by over 20 years of research and development, ensuring the highest quality and effectiveness. We also provide personalized treatment plans tailored to each patient's unique needs."
     },
     {
-      question: "Are BioCellRx's treatments safe and FDA compliant?",
-      answer: "Yes, all our treatments follow strict FDA guidelines and regulatory compliance standards. Our products undergo rigorous testing and quality control measures. We work exclusively with licensed medical professionals and maintain the highest safety standards in the industry."
+      question: "Are BioCellRx's treatments safe and compliant?",
+      answer: "Yes, all our treatments follow strict quality guidelines and regulatory compliance standards. Our products undergo rigorous testing and quality control measures. We work exclusively with licensed medical professionals and maintain the highest safety standards in the industry."
     },
     {
       question: "What conditions can be treated with BioCellRx's regenerative therapies?",

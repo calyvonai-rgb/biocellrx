@@ -33,7 +33,7 @@ const TermsOfService = () => {
         "Not Medical Advice: Information on our website is for educational purposes only and does not constitute medical advice, diagnosis, or treatment recommendations.",
         "Professional Consultation: Always consult with qualified healthcare professionals before making medical decisions or starting any treatment.",
         "Individual Results: Treatment outcomes may vary between individuals. Past results do not guarantee future outcomes.",
-        "FDA Compliance: Our products and services comply with applicable FDA regulations for regenerative medicine and cellular therapies.",
+        "Quality Compliance: Our products and services comply with applicable quality regulations for regenerative medicine and cellular therapies.",
         "Risk Acknowledgment: You understand that all medical treatments carry inherent risks, and you assume responsibility for your treatment decisions."
       ]
     },

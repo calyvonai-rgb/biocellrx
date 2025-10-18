@@ -64,7 +64,7 @@ const Services = () => {
       title: "hUC Fresh MSC Stem Cells",
       badge: "Fresh",
       description: "Clinical grade mesenchymal stem cells, non-frozen fresh grade. The first team to isolate umbilical cord MSCs in 2006. Pharmaceutical grade cGMP lab with the highest standard in the industry. Fresh stem cells activity >90% & purity >95%.",
-      details: "40ml • Multiple FDA approved INDs • Pharmaceutical grade cGMP",
+      details: "40ml • Pharmaceutical grade cGMP • High quality standards",
       image: hucFreshMsc
     },
     {
