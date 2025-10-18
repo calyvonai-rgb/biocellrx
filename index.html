@@ -18,11 +18,48 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://player.vimeo.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script 
-      src="https://widgets.leadconnectorhq.com/loader.js"  
-      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
-      data-widget-id="68f3fb5a6c2645482a6ac8b3"
-      async>
+    <script>
+      // Enhanced chatbot loader with retry logic
+      (function() {
+        let retryCount = 0;
+        const maxRetries = 3;
+        const retryDelay = 2000; // 2 seconds
+        
+        function loadChatWidget() {
+          try {
+            const script = document.createElement('script');
+            script.src = 'https://widgets.leadconnectorhq.com/loader.js';
+            script.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+            script.setAttribute('data-widget-id', '68f3fb5a6c2645482a6ac8b3');
+            script.async = true;
+            
+            script.onerror = function() {
+              console.warn('Chat widget failed to load, attempt ' + (retryCount + 1));
+              if (retryCount < maxRetries) {
+                retryCount++;
+                setTimeout(loadChatWidget, retryDelay * retryCount);
+              } else {
+                console.error('Chat widget failed to load after ' + maxRetries + ' attempts');
+              }
+            };
+            
+            script.onload = function() {
+              console.log('Chat widget loaded successfully');
+            };
+            
+            document.head.appendChild(script);
+          } catch (error) {
+            console.error('Error loading chat widget:', error);
+          }
+        }
+        
+        // Start loading when DOM is ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', loadChatWidget);
+        } else {
+          loadChatWidget();
+        }
+      })();
     </script>
     
     <!-- SEO will be handled by react-helmet-async -->
