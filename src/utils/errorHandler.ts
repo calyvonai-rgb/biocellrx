@@ -147,11 +147,54 @@ export const handleAsyncError = async <T>(
   }
 };
 
+// Helper to detect if error is from external/third-party scripts
+const isExternalScriptError = (filename?: string, message?: string): boolean => {
+  if (!filename && !message) return false;
+  
+  const externalDomains = [
+    'leadconnectorhq.com',
+    'widgets.leadconnectorhq.com',
+    'beta.leadconnectorhq.com',
+    'gstatic.com',
+    'googleapis.com',
+    'googletagmanager.com',
+    'analytics.google.com',
+  ];
+  
+  const externalErrorPatterns = [
+    'Importing a module script failed',
+    'Loading module',
+    'Failed to fetch',
+  ];
+  
+  // Check if error is from external domain
+  if (filename) {
+    const isExternal = externalDomains.some(domain => filename.includes(domain));
+    if (isExternal) return true;
+  }
+  
+  // Check if error message matches external script patterns
+  if (message) {
+    const matchesPattern = externalErrorPatterns.some(pattern => 
+      message.includes(pattern)
+    );
+    if (matchesPattern) return true;
+  }
+  
+  return false;
+};
+
 // Global error handler setup
 export const setupGlobalErrorHandling = (options: ErrorHandlerOptions = {}) => {
   if (typeof window !== 'undefined') {
     // Handle unhandled JavaScript errors
     window.addEventListener('error', (event) => {
+      // Filter out external script errors
+      if (isExternalScriptError(event.filename, event.message)) {
+        console.warn('[External Script Error]', event.message, event.filename);
+        return;
+      }
+      
       handleError(
         new Error(event.message),
         `Global Error (${event.filename}:${event.lineno})`,
@@ -161,8 +204,17 @@ export const setupGlobalErrorHandling = (options: ErrorHandlerOptions = {}) => {
 
     // Handle unhandled promise rejections
     window.addEventListener('unhandledrejection', (event) => {
+      const errorMessage = event.reason?.message || String(event.reason) || 'Unhandled Promise Rejection';
+      
+      // Filter out external script errors
+      if (isExternalScriptError(undefined, errorMessage)) {
+        console.warn('[External Script Promise Rejection]', errorMessage);
+        event.preventDefault(); // Prevent default browser handling
+        return;
+      }
+      
       handleError(
-        new Error(event.reason?.message || 'Unhandled Promise Rejection'),
+        new Error(errorMessage),
         'Promise Rejection',
         options
       );
