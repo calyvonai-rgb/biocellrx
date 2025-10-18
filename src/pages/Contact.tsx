@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { 
   Phone,
   ArrowRight,
@@ -13,6 +14,43 @@ import labHeroBg from "@/assets/lab-hero-bg.jpg";
 import contactConsultationImage from "@/assets/contact-consultation-image.jpg";
 
 const Contact = () => {
+  useEffect(() => {
+    // Check if script is already loaded
+    const scriptId = 'calyvon-form-embed-script';
+    if (document.getElementById(scriptId)) {
+      return;
+    }
+
+    // Wait for iframe to be in the DOM
+    const iframe = document.getElementById('inline-Da3qqC7jNyKxwGeEQ9ex');
+    if (!iframe) {
+      return;
+    }
+
+    // Dynamically load the form embed script
+    const script = document.createElement('script');
+    script.id = scriptId;
+    script.src = 'https://links.calyvonai.com/js/form_embed.js';
+    script.async = true;
+    
+    script.onload = () => {
+      console.log('Form embed script loaded successfully');
+    };
+    
+    script.onerror = () => {
+      console.error('Failed to load form embed script');
+    };
+
+    document.body.appendChild(script);
+
+    // Cleanup function
+    return () => {
+      const existingScript = document.getElementById(scriptId);
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
 
   const contactInfo = [
     {
