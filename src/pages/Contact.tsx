@@ -1,14 +1,7 @@
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
 import { 
   Phone,
   ArrowRight,
@@ -16,148 +9,10 @@ import {
   Clock,
   Facebook
 } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import labHeroBg from "@/assets/lab-hero-bg.jpg";
 import contactConsultationImage from "@/assets/contact-consultation-image.jpg";
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    primaryHealthConcern: "",
-    additionalInfo: "",
-    agreeToComms: false
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    
-    // Implement input length limits
-    const maxLengths: Record<string, number> = {
-      firstName: 50,
-      lastName: 50,
-      email: 254,
-      phone: 20,
-      primaryHealthConcern: 200,
-      additionalInfo: 1000
-    };
-    
-    if (maxLengths[name] && value.length > maxLengths[name]) {
-      return; // Don't update if exceeds limit
-    }
-    
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleCheckboxChange = (checked: boolean) => {
-    setFormData(prev => ({
-      ...prev,
-      agreeToComms: checked
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Basic validation
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone) {
-      toast({
-        title: "Error",
-        description: "Please fill in all required fields.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    if (!formData.agreeToComms) {
-      toast({
-        title: "Agreement Required",
-        description: "Please agree to receive communications to proceed.",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    // Enhanced email validation
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailRegex.test(formData.email) || formData.email.length > 254) {
-      toast({
-        title: "Error",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    // Phone number validation
-    const phoneDigits = formData.phone.replace(/\D/g, '');
-    const phoneRegex = /^[\+]?[1]?[\s\-\.]?[\(]?[0-9]{3}[\)]?[\s\-\.]?[0-9]{3}[\s\-\.]?[0-9]{4}$/;
-    if (!phoneRegex.test(formData.phone) || phoneDigits.length < 10 || phoneDigits.length > 15) {
-      toast({
-        title: "Error",
-        description: "Please enter a valid phone number (e.g., (555) 123-4567).",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    try {
-      // Submit form data to edge function
-      const { data, error } = await supabase.functions.invoke('send-contact-notification', {
-        body: {
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          phone: formData.phone,
-          primaryHealthConcern: formData.primaryHealthConcern,
-          additionalInfo: formData.additionalInfo,
-          agreeToComms: formData.agreeToComms,
-        }
-      });
-
-      if (error) {
-        console.error('Error submitting form:', error);
-        toast({
-          title: "Error",
-          description: "There was a problem submitting your form. Please try again.",
-          variant: "destructive",
-        });
-        return;
-      }
-
-      console.log('Form submitted successfully:', data);
-      
-      toast({
-        title: "Form Submitted Successfully!",
-        description: "We'll contact you soon to schedule your consultation.",
-      });
-      
-      // Reset form
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        primaryHealthConcern: "",
-        additionalInfo: "",
-        agreeToComms: false
-      });
-    } catch (error) {
-      console.error('Unexpected error:', error);
-      toast({
-        title: "Error",
-        description: "There was a problem submitting your form. Please try again.",
-        variant: "destructive",
-      });
-    }
-  };
 
   const contactInfo = [
     {
@@ -290,121 +145,24 @@ const Contact = () => {
             </div>
 
             {/* Right Side - Contact Form */}
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-border shadow-lg animate-fade-in [animation-delay:0.3s]">
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName" className="text-sm sm:text-base text-foreground font-medium">
-                      First Name <span className="text-accent">*</span>
-                    </Label>
-                    <Input
-                      id="firstName"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleInputChange}
-                      required
-                      placeholder="Enter your first name"
-                      className="bg-white border-border focus:border-accent focus:ring-accent/20 text-sm sm:text-base h-10 sm:h-11"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName" className="text-sm sm:text-base text-foreground font-medium">
-                      Last Name <span className="text-accent">*</span>
-                    </Label>
-                    <Input
-                      id="lastName"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleInputChange}
-                      required
-                      placeholder="Enter your last name"
-                      className="bg-white border-border focus:border-accent focus:ring-accent/20 text-sm sm:text-base h-10 sm:h-11"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-sm sm:text-base text-foreground font-medium">
-                    Email Address <span className="text-accent">*</span>
-                  </Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="Enter your email"
-                    className="bg-white border-border focus:border-accent focus:ring-accent/20 text-sm sm:text-base h-10 sm:h-11"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-sm sm:text-base text-foreground font-medium">
-                    Phone Number <span className="text-accent">*</span>
-                  </Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="(555) 123-4567"
-                    className="bg-white border-border focus:border-accent focus:ring-accent/20 text-sm sm:text-base h-10 sm:h-11"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="primaryHealthConcern" className="text-sm sm:text-base text-foreground font-medium">
-                    Primary Health Concern
-                  </Label>
-                  <Input
-                    id="primaryHealthConcern"
-                    name="primaryHealthConcern"
-                    value={formData.primaryHealthConcern}
-                    onChange={handleInputChange}
-                    placeholder="What brings you to BioCellRx?"
-                    className="bg-white border-border focus:border-accent focus:ring-accent/20 text-sm sm:text-base h-10 sm:h-11"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="additionalInfo" className="text-sm sm:text-base text-foreground font-medium">
-                    Additional Information
-                  </Label>
-                  <Textarea
-                    id="additionalInfo"
-                    name="additionalInfo"
-                    rows={4}
-                    value={formData.additionalInfo}
-                    onChange={handleInputChange}
-                    placeholder="Tell us more about your health goals or any questions you have..."
-                    className="bg-white border-border focus:border-accent focus:ring-accent/20 resize-none text-sm sm:text-base min-h-[100px]"
-                  />
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <Checkbox
-                    id="agreeToComms"
-                    checked={formData.agreeToComms}
-                    onCheckedChange={handleCheckboxChange}
-                    required
-                    className="border-border data-[state=checked]:bg-accent data-[state=checked]:border-accent mt-1 flex-shrink-0"
-                  />
-                  <Label htmlFor="agreeToComms" className="text-xs sm:text-sm leading-relaxed text-muted-foreground cursor-pointer">
-                    I agree to receive communications from BioCellRx regarding my inquiry and understand that I can unsubscribe at any time. <span className="text-accent">*</span>
-                  </Label>
-                </div>
-
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full bg-accent hover:bg-accent/90 text-black font-semibold py-3 sm:py-4 rounded-lg transition-all duration-300 text-sm sm:text-base"
-                >
-                  Send New Patient Form
-                </Button>
-              </form>
+            <div className="bg-white rounded-2xl p-0 border border-border shadow-lg animate-fade-in [animation-delay:0.3s] overflow-hidden min-h-[689px]">
+              <iframe
+                src="https://links.calyvonai.com/widget/form/Da3qqC7jNyKxwGeEQ9ex"
+                style={{width:'100%', height:'100%', minHeight:'689px', border:'none', borderRadius:'3px'}}
+                id="inline-Da3qqC7jNyKxwGeEQ9ex" 
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="BioCellRx WF"
+                data-height="689"
+                data-layout-iframe-id="inline-Da3qqC7jNyKxwGeEQ9ex"
+                data-form-id="Da3qqC7jNyKxwGeEQ9ex"
+                title="BioCellRx WF"
+              />
             </div>
           </div>
         </div>
