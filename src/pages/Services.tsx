@@ -109,8 +109,8 @@ const Services = () => {
     <>
       <SEO 
         title="Wellness & Biologics Services - Advanced Stem Cell Therapy | BioCellRx"
-        description="Comprehensive regenerative medicine services including MSC exosomal lysate, CBSC cryo, fresh stem cells, and specialized treatments. FDA-approved cellular therapies with clinical grade results."
-        keywords="regenerative medicine services, MSC exosomal lysate, CBSC cryo, fresh stem cells, cellular therapy, biologics, wellness support, stem cell treatments, anti-aging therapy, joint pain treatment, chronic pain relief, FDA approved therapies, clinical grade stem cells"
+        description="Comprehensive regenerative medicine services including MSC exosomal lysate, CBSC cryo, fresh stem cells, and specialized treatments. Clinically advanced cellular therapies with clinical grade results."
+        keywords="regenerative medicine services, MSC exosomal lysate, CBSC cryo, fresh stem cells, cellular therapy, biologics, wellness support, stem cell treatments, anti-aging therapy, joint pain treatment, chronic pain relief, clinically advanced therapies, clinical grade stem cells"
         canonical="https://biocellrx.com/services"
       />
       <Navigation />

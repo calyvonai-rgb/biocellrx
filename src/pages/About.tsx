@@ -256,7 +256,7 @@ const About = () => {
             <div className="mb-12">
               <img 
                 src="/uploads/fda-approved-conditions.jpg" 
-                alt="FDA approved conditions for therapeutics using umbilical cord blood MSCs"
+                alt="Clinically studied conditions for therapeutics using umbilical cord blood MSCs"
                 className="w-full max-w-5xl mx-auto rounded-2xl shadow-lg"
               />
             </div>
