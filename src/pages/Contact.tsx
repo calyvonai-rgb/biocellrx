@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import { 
   Phone,
   ArrowRight,
@@ -14,65 +14,38 @@ import labHeroBg from "@/assets/lab-hero-bg.jpg";
 import contactConsultationImage from "@/assets/contact-consultation-image.jpg";
 
 const Contact = () => {
-  useEffect(() => {
-    // Check if script is already loaded
-    const scriptId = 'calyvon-form-embed-script';
-    if (document.getElementById(scriptId)) {
-      return;
-    }
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
-    // Wait for iframe to be in the DOM
-    const iframe = document.getElementById('inline-Da3qqC7jNyKxwGeEQ9ex');
-    if (!iframe) {
-      return;
-    }
+  const handleIframeRef = useCallback((node: HTMLIFrameElement | null) => {
+    if (!node) return;
 
-    // Force display the iframe with important overrides
-    const forceDisplay = () => {
-      if (iframe) {
-        iframe.style.setProperty('display', 'block', 'important');
-        iframe.style.setProperty('visibility', 'visible', 'important');
-        iframe.style.setProperty('opacity', '1', 'important');
-        iframe.style.setProperty('position', 'relative', 'important');
-      }
+    console.log('Iframe mounted, applying visibility fixes');
+    
+    // Force visibility styles
+    const forceVisible = () => {
+      node.style.setProperty('display', 'block', 'important');
+      node.style.setProperty('visibility', 'visible', 'important');
+      node.style.setProperty('opacity', '1', 'important');
+      node.style.setProperty('min-height', '689px', 'important');
     };
 
-    forceDisplay();
+    forceVisible();
 
-    // Set up MutationObserver to prevent the script from hiding the iframe
+    // Watch for any style changes
     const observer = new MutationObserver(() => {
-      forceDisplay();
+      console.log('Iframe style changed, reapplying visibility');
+      forceVisible();
     });
 
-    observer.observe(iframe, {
+    observer.observe(node, {
       attributes: true,
       attributeFilter: ['style', 'class'],
     });
 
-    // Dynamically load the form embed script
-    const script = document.createElement('script');
-    script.id = scriptId;
-    script.src = 'https://links.calyvonai.com/js/form_embed.js';
-    script.async = true;
-    
-    script.onload = () => {
-      console.log('Form embed script loaded successfully');
-      forceDisplay(); // Force display again after script loads
-    };
-    
-    script.onerror = () => {
-      console.error('Failed to load form embed script');
-    };
-
-    document.body.appendChild(script);
-
-    // Cleanup function
+    // Store cleanup
     return () => {
+      console.log('Cleaning up observer');
       observer.disconnect();
-      const existingScript = document.getElementById(scriptId);
-      if (existingScript) {
-        existingScript.remove();
-      }
     };
   }, []);
 
@@ -209,14 +182,16 @@ const Contact = () => {
             {/* Right Side - Contact Form */}
             <div className="bg-white rounded-2xl border border-border shadow-lg animate-fade-in [animation-delay:0.3s] overflow-hidden" style={{minHeight: '689px', position: 'relative'}}>
               <iframe
-                src="https://links.calyvonai.com/widget/form/Da3qqC7jNyKxwGeEQ9ex"
+                ref={handleIframeRef}
+                src="https://api.leadconnectorhq.com/widget/form/Da3qqC7jNyKxwGeEQ9ex"
+                className="w-full h-full min-h-[689px] border-0"
                 style={{
                   width:'100%', 
                   height:'100%', 
-                  border:'none', 
-                  borderRadius:'3px'
+                  minHeight: '689px',
+                  border:'none'
                 }}
-                id="inline-Da3qqC7jNyKxwGeEQ9ex"
+                id="inline-Da3qqC7jNyKxwGeEQ9ex" 
                 data-layout="{'id':'INLINE'}"
                 data-trigger-type="alwaysShow"
                 data-trigger-value=""
