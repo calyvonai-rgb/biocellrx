@@ -145,24 +145,33 @@ const Contact = () => {
             </div>
 
             {/* Right Side - Contact Form */}
-            <div className="bg-white rounded-2xl p-0 border border-border shadow-lg animate-fade-in [animation-delay:0.3s] overflow-hidden min-h-[689px]">
-              <iframe
-                src="https://links.calyvonai.com/widget/form/Da3qqC7jNyKxwGeEQ9ex"
-                style={{width:'100%', height:'100%', minHeight:'689px', border:'none', borderRadius:'3px'}}
-                id="inline-Da3qqC7jNyKxwGeEQ9ex" 
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="BioCellRx WF"
-                data-height="689"
-                data-layout-iframe-id="inline-Da3qqC7jNyKxwGeEQ9ex"
-                data-form-id="Da3qqC7jNyKxwGeEQ9ex"
-                title="BioCellRx WF"
-              />
+            <div className="bg-white rounded-2xl border border-border shadow-lg animate-fade-in [animation-delay:0.3s] overflow-hidden">
+              <div style={{position: 'relative', width: '100%', height: '689px'}} className="[&_iframe]:!block [&_.ep-iFrameContainer]:!block">
+                <iframe
+                  src="https://links.calyvonai.com/widget/form/Da3qqC7jNyKxwGeEQ9ex"
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    border: 'none'
+                  }}
+                  id="inline-Da3qqC7jNyKxwGeEQ9ex" 
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name="BioCellRx WF"
+                  data-height="689"
+                  data-layout-iframe-id="inline-Da3qqC7jNyKxwGeEQ9ex"
+                  data-form-id="Da3qqC7jNyKxwGeEQ9ex"
+                  title="BioCellRx WF"
+                />
+              </div>
             </div>
           </div>
         </div>
