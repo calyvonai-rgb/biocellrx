@@ -151,12 +151,11 @@ const Contact = () => {
                 className="w-full border-0"
                 style={{
                   width: '100%',
-                  height: '689px',
+                  height: '800px',
                   border: 'none'
                 }}
                 id="inline-Da3qqC7jNyKxwGeEQ9ex"
                 title="BioCellRx WF"
-                loading="eager"
               />
             </div>
           </div>
