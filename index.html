@@ -18,46 +18,97 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://player.vimeo.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- LeadConnector Chat Widget with Enhanced Loading -->
     <script>
-      // Enhanced chatbot loader with retry logic
       (function() {
-        let retryCount = 0;
-        const maxRetries = 3;
-        const retryDelay = 2000; // 2 seconds
+        'use strict';
         
-        function loadChatWidget() {
+        let initAttempts = 0;
+        const MAX_INIT_ATTEMPTS = 5;
+        const INIT_DELAY = 1500;
+        
+        // Wait for complete page load before initializing widget
+        function initChatWidget() {
+          initAttempts++;
+          
           try {
+            // Remove any existing widget scripts to prevent conflicts
+            const existingScripts = document.querySelectorAll('script[src*="leadconnectorhq.com"]');
+            existingScripts.forEach(script => {
+              if (script.parentNode && initAttempts > 1) {
+                script.parentNode.removeChild(script);
+              }
+            });
+            
+            // Create fresh script element
             const script = document.createElement('script');
             script.src = 'https://widgets.leadconnectorhq.com/loader.js';
             script.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
             script.setAttribute('data-widget-id', '68f3fb5a6c2645482a6ac8b3');
             script.async = true;
+            script.defer = true;
             
-            script.onerror = function() {
-              console.warn('Chat widget failed to load, attempt ' + (retryCount + 1));
-              if (retryCount < maxRetries) {
-                retryCount++;
-                setTimeout(loadChatWidget, retryDelay * retryCount);
+            // Success handler
+            script.onload = function() {
+              console.log('[Chat Widget] Loaded successfully on attempt', initAttempts);
+              
+              // Give ionic components time to register
+              setTimeout(function() {
+                // Check if widget initialized properly
+                const widgetContainer = document.querySelector('[data-widget-id="68f3fb5a6c2645482a6ac8b3"]');
+                if (!widgetContainer && initAttempts < MAX_INIT_ATTEMPTS) {
+                  console.warn('[Chat Widget] Container not found, retrying...');
+                  setTimeout(initChatWidget, INIT_DELAY);
+                }
+              }, 1000);
+            };
+            
+            // Error handler with retry logic
+            script.onerror = function(error) {
+              console.error('[Chat Widget] Failed to load on attempt', initAttempts, error);
+              
+              if (initAttempts < MAX_INIT_ATTEMPTS) {
+                const retryDelay = INIT_DELAY * Math.pow(1.5, initAttempts - 1);
+                console.log('[Chat Widget] Retrying in', retryDelay, 'ms');
+                setTimeout(initChatWidget, retryDelay);
               } else {
-                console.error('Chat widget failed to load after ' + maxRetries + ' attempts');
+                console.error('[Chat Widget] Failed after', MAX_INIT_ATTEMPTS, 'attempts. Please refresh the page.');
               }
             };
             
-            script.onload = function() {
-              console.log('Chat widget loaded successfully');
-            };
-            
+            // Append to head for better loading priority
             document.head.appendChild(script);
-          } catch (error) {
-            console.error('Error loading chat widget:', error);
+            
+          } catch (err) {
+            console.error('[Chat Widget] Initialization error:', err);
+            if (initAttempts < MAX_INIT_ATTEMPTS) {
+              setTimeout(initChatWidget, INIT_DELAY * 2);
+            }
           }
         }
         
-        // Start loading when DOM is ready
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', loadChatWidget);
+        // Start initialization after DOM and resources are ready
+        if (document.readyState === 'complete') {
+          // Page already loaded
+          setTimeout(initChatWidget, 500);
         } else {
-          loadChatWidget();
+          // Wait for full page load including styles and images
+          window.addEventListener('load', function() {
+            setTimeout(initChatWidget, 500);
+          });
+        }
+        
+        // Fallback: Also try on DOMContentLoaded in case 'load' event already fired
+        if (document.readyState !== 'loading') {
+          setTimeout(initChatWidget, 500);
+        } else {
+          document.addEventListener('DOMContentLoaded', function() {
+            // Only initialize if not already started
+            if (initAttempts === 0) {
+              setTimeout(initChatWidget, 500);
+            }
+          });
         }
       })();
     </script>
