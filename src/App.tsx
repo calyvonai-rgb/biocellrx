@@ -1,4 +1,13 @@
 import React from "react";
+
+// Declare global LeadConnector interface
+declare global {
+  interface Window {
+    LeadConnector?: {
+      init: () => void;
+    };
+  }
+}
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -8,6 +17,7 @@ import { HelmetProvider } from "react-helmet-async";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import CookieConsent from "@/components/CookieConsent";
 import Analytics from "@/components/Analytics";
+import SecurityHeaders from "@/components/SecurityHeaders";
 import RedirectHandler from "./components/RedirectHandler";
 import { setupGlobalErrorHandling } from "./utils/errorHandler";
 import Index from "./pages/Index";
@@ -33,9 +43,12 @@ const App = () => {
     });
   }, []);
 
+  // LeadConnector widget should auto-initialize from the script tag
+
   return (
     <ErrorBoundary>
       <HelmetProvider>
+        <SecurityHeaders />
         <QueryClientProvider client={queryClient}>
           <TooltipProvider>
             <Toaster />

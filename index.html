@@ -18,13 +18,37 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://player.vimeo.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- LeadConnector Performance Optimization -->
+    <link rel="preconnect" href="https://widgets.leadconnectorhq.com" crossorigin />
+    <link rel="preconnect" href="https://api.leadconnectorhq.com" crossorigin />
+    <link rel="dns-prefetch" href="https://widgets.leadconnectorhq.com" />
+    <link rel="dns-prefetch" href="https://api.leadconnectorhq.com" />
     <!-- SEO will be handled by react-helmet-async -->
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script type="module" src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
-    <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmfevtdls0017doetjqkpr4yc'></zapier-interfaces-chatbot-embed>
+    
+    <!-- GoHighLevel Chat Widget - Fresh Widget ID -->
+    <script 
+      src="https://widgets.leadconnectorhq.com/loader.js"  
+      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
+      data-widget-id="68f41c1f1e62db5ff1f69320"
+      async
+      defer
+    ></script>
+    
+    <!-- Error handling for widget -->
+    <script>
+      window.addEventListener('error', function(e) {
+        if (e.message && e.message.includes('ERR-176082')) {
+          console.warn('GoHighLevel widget error (non-critical):', e.message);
+          e.preventDefault();
+        }
+      });
+    </script>
+    
   </body>
 </html>
