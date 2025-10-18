@@ -27,6 +27,28 @@ const Contact = () => {
       return;
     }
 
+    // Force display the iframe with important overrides
+    const forceDisplay = () => {
+      if (iframe) {
+        iframe.style.setProperty('display', 'block', 'important');
+        iframe.style.setProperty('visibility', 'visible', 'important');
+        iframe.style.setProperty('opacity', '1', 'important');
+        iframe.style.setProperty('position', 'relative', 'important');
+      }
+    };
+
+    forceDisplay();
+
+    // Set up MutationObserver to prevent the script from hiding the iframe
+    const observer = new MutationObserver(() => {
+      forceDisplay();
+    });
+
+    observer.observe(iframe, {
+      attributes: true,
+      attributeFilter: ['style', 'class'],
+    });
+
     // Dynamically load the form embed script
     const script = document.createElement('script');
     script.id = scriptId;
@@ -35,6 +57,7 @@ const Contact = () => {
     
     script.onload = () => {
       console.log('Form embed script loaded successfully');
+      forceDisplay(); // Force display again after script loads
     };
     
     script.onerror = () => {
@@ -45,6 +68,7 @@ const Contact = () => {
 
     // Cleanup function
     return () => {
+      observer.disconnect();
       const existingScript = document.getElementById(scriptId);
       if (existingScript) {
         existingScript.remove();
@@ -183,11 +207,16 @@ const Contact = () => {
             </div>
 
             {/* Right Side - Contact Form */}
-            <div className="bg-white rounded-2xl border border-border shadow-lg animate-fade-in [animation-delay:0.3s] overflow-hidden" style={{minHeight: '689px'}}>
+            <div className="bg-white rounded-2xl border border-border shadow-lg animate-fade-in [animation-delay:0.3s] overflow-hidden" style={{minHeight: '689px', position: 'relative'}}>
               <iframe
                 src="https://links.calyvonai.com/widget/form/Da3qqC7jNyKxwGeEQ9ex"
-                style={{width:'100%', height:'100%', border:'none', borderRadius:'3px'}}
-                id="inline-Da3qqC7jNyKxwGeEQ9ex" 
+                style={{
+                  width:'100%', 
+                  height:'100%', 
+                  border:'none', 
+                  borderRadius:'3px'
+                }}
+                id="inline-Da3qqC7jNyKxwGeEQ9ex"
                 data-layout="{'id':'INLINE'}"
                 data-trigger-type="alwaysShow"
                 data-trigger-value=""
