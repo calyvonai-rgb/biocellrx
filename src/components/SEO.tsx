@@ -11,9 +11,9 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = "BioCellRx - Advanced Stem Cell Therapy & Regenerative Medicine | FDA-Approved Cellular Treatments",
-  description = "Leading regenerative medicine clinic offering FDA-approved stem cell therapy, MSC exosomal lysate, and advanced cellular treatments. 95% success rate, 20+ years experience. Book your consultation today.",
-  keywords = "stem cell therapy, regenerative medicine, MSC exosomal lysate, cellular therapy, anti-aging treatment, joint pain relief, arthritis treatment, cord blood stem cells, FDA approved stem cells, regenerative therapy, stem cell clinic, cellular healing, mesenchymal stem cells, exosome therapy, chronic pain treatment, wellness therapy, longevity medicine, tissue repair, inflammatory conditions, BioCellRx",
+  title = "BioCellRx - Advanced Stem Cell Therapy & Regenerative Medicine | Clinically Advanced Cellular Treatments",
+  description = "Leading regenerative medicine clinic offering clinically advanced stem cell therapy, MSC exosomal lysate, and cellular treatments. 95% success rate, 20+ years experience. Book your consultation today.",
+  keywords = "stem cell therapy, regenerative medicine, MSC exosomal lysate, cellular therapy, anti-aging treatment, joint pain relief, arthritis treatment, cord blood stem cells, clinically advanced stem cells, regenerative therapy, stem cell clinic, cellular healing, mesenchymal stem cells, exosome therapy, chronic pain treatment, wellness therapy, longevity medicine, tissue repair, inflammatory conditions, BioCellRx",
   canonical = "https://biocellrx.com",
   ogImage = "https://biocellrx.com/uploads/biocellrx-social-image.jpg",
   ogType = "website",

@@ -22,7 +22,7 @@ const Hero = () => {
       <div className="relative z-10 w-full px-4 sm:px-6 pt-32 sm:pt-32 pb-12">
         <div className="w-full max-w-none sm:max-w-4xl mx-auto text-center">
           <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 text-white leading-tight px-2 mt-24 sm:mt-0">
-            Advanced Regenerative Medicine &{" "}
+            Innovative Health Through Regenerative Medicine &{" "}
             <br />
             <span className="bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent">
               Stem Cell Therapy
@@ -31,7 +31,7 @@ const Hero = () => {
 
           {/* Subheadline with hot keywords */}
           <p className="text-lg sm:text-xl md:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-10 w-full sm:max-w-4xl mx-auto leading-relaxed px-4 sm:px-2">
-            Leading the future of regenerative medicine with advanced stem cell therapies and premium wellness products. Transforming lives through scientific innovation.
+            Leading the future of Regenerative medicine with advanced Stem Cell therapies and premium wellness products. Transforming lives through Scientific innovation.
           </p>
 
           {/* CTA Buttons */}

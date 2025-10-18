@@ -109,8 +109,8 @@ const Services = () => {
     <>
       <SEO 
         title="Wellness & Biologics Services - Advanced Stem Cell Therapy | BioCellRx"
-        description="Comprehensive regenerative medicine services including MSC exosomal lysate, CBSC cryo, fresh stem cells, and specialized treatments. FDA-approved cellular therapies with clinical grade results."
-        keywords="regenerative medicine services, MSC exosomal lysate, CBSC cryo, fresh stem cells, cellular therapy, biologics, wellness support, stem cell treatments, anti-aging therapy, joint pain treatment, chronic pain relief, FDA approved therapies, clinical grade stem cells"
+        description="Comprehensive regenerative medicine services including MSC exosomal lysate, CBSC cryo, fresh stem cells, and specialized treatments. Clinically advanced cellular therapies with clinical grade results."
+        keywords="regenerative medicine services, MSC exosomal lysate, CBSC cryo, fresh stem cells, cellular therapy, biologics, wellness support, stem cell treatments, anti-aging therapy, joint pain treatment, chronic pain relief, clinically advanced therapies, clinical grade stem cells"
         canonical="https://biocellrx.com/services"
       />
       <Navigation />
@@ -135,7 +135,7 @@ const Services = () => {
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in [animation-delay:0.2s] px-4">
-              Comprehensive regenerative medicine services and cutting-edge products designed to support your body's natural healing processes
+              Science-Driven. Biopharmaceuticals designed to optimize cellular health.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in [animation-delay:0.4s] px-4">
               <a href="tel:+18585197305">
@@ -302,7 +302,7 @@ const Services = () => {
                     <img 
                       src={therapy.image} 
                       alt={therapy.title}
-                      className="w-40 h-40 mx-auto object-cover rounded-lg"
+                      className="w-96 h-96 mx-auto object-cover rounded-lg"
                     />
                   </div>
                   <div className="mb-2">
