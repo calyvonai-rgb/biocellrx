@@ -18,6 +18,7 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import CookieConsent from "@/components/CookieConsent";
 import Analytics from "@/components/Analytics";
 import SecurityHeaders from "@/components/SecurityHeaders";
+import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
 import RedirectHandler from "./components/RedirectHandler";
 import { setupGlobalErrorHandling } from "./utils/errorHandler";
 import Index from "./pages/Index";
@@ -71,6 +72,7 @@ const App = () => {
                 </Routes>
                 <CookieConsent />
                 <Analytics />
+                <VercelAnalytics />
               </RedirectHandler>
             </BrowserRouter>
           </TooltipProvider>
