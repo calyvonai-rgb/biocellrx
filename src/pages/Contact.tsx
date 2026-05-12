@@ -10,10 +10,14 @@ import {
   Clock,
   Facebook
 } from "lucide-react";
-import labHeroBg from "@/assets/lab-hero-bg.jpg";
-import contactConsultationImage from "@/assets/contact-consultation-image.jpg";
+import labHeroBgFallback from "@/assets/lab-hero-bg.jpg";
+import contactConsultationFallback from "@/assets/contact-consultation-image.jpg";
+import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 const Contact = () => {
+  const { img } = useSiteMedia();
+  const labHeroBg = img('heroBackground', labHeroBgFallback);
+  const contactConsultationImage = img('contactConsultationImage', contactConsultationFallback);
   const contactInfo = [
     {
       icon: Phone,

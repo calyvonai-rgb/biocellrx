@@ -10,22 +10,39 @@ import {
   Phone,
   Mail
 } from "lucide-react";
-import labHeroBg from "@/assets/lab-hero-bg.jpg";
-import regenerativeProcessImg from "@/assets/regenerative-process-infographic.jpg";
-import safetyQualityImg from "@/assets/safety-quality-infographic.jpg";
-import treatmentTimelineImg from "@/assets/treatment-timeline-infographic.jpg";
-import cellularResearchLab from "@/assets/cellular-research-lab.jpg";
-import stemCellFacility from "@/assets/stem-cell-facility.jpg";
-import qualityControlLab from "@/assets/quality-control-lab.jpg";
-import cryogenicStorage from "@/assets/cryogenic-storage.jpg";
-import researchImage1 from "@/assets/research-image-1.jpg";
-import researchImage2 from "@/assets/research-image-2.png";
-import researchImage3 from "@/assets/research-image-3.png";
-import processGraph from "@/assets/process-graph.jpg";
-import researchImage5 from "@/assets/research-image-5.jpg";
-import additionalKnowledgeResource from "@/assets/additional-knowledge-resource.jpg";
+import labHeroBgFallback from "@/assets/lab-hero-bg.jpg";
+import regenerativeProcessFallback from "@/assets/regenerative-process-infographic.jpg";
+import safetyQualityFallback from "@/assets/safety-quality-infographic.jpg";
+import treatmentTimelineFallback from "@/assets/treatment-timeline-infographic.jpg";
+import cellularResearchLabFallback from "@/assets/cellular-research-lab.jpg";
+import stemCellFacilityFallback from "@/assets/stem-cell-facility.jpg";
+import qualityControlLabFallback from "@/assets/quality-control-lab.jpg";
+import cryogenicStorageFallback from "@/assets/cryogenic-storage.jpg";
+import researchImage1Fallback from "@/assets/research-image-1.jpg";
+import researchImage2Fallback from "@/assets/research-image-2.png";
+import researchImage3Fallback from "@/assets/research-image-3.png";
+import processGraphFallback from "@/assets/process-graph.jpg";
+import researchImage5Fallback from "@/assets/research-image-5.jpg";
+import additionalKnowledgeFallback from "@/assets/additional-knowledge-resource.jpg";
+import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 const Resources = () => {
+  const { img } = useSiteMedia();
+  const labHeroBg = img('heroBackground', labHeroBgFallback);
+  const regenerativeProcessImg = img('resourcesRegenerativeProcess', regenerativeProcessFallback);
+  const safetyQualityImg = img('resourcesSafetyQuality', safetyQualityFallback);
+  const treatmentTimelineImg = img('resourcesTreatmentTimeline', treatmentTimelineFallback);
+  const cellularResearchLab = img('resourcesCellularResearchLab', cellularResearchLabFallback);
+  const stemCellFacility = img('resourcesStemCellFacility', stemCellFacilityFallback);
+  const qualityControlLab = img('resourcesQualityControlLab', qualityControlLabFallback);
+  const cryogenicStorage = img('resourcesCryogenicStorage', cryogenicStorageFallback);
+  const researchImage1 = img('resourcesResearchImage1', researchImage1Fallback);
+  const researchImage2 = img('resourcesResearchImage2', researchImage2Fallback);
+  const researchImage3 = img('resourcesResearchImage3', researchImage3Fallback);
+  const processGraph = img('resourcesProcessGraph', processGraphFallback);
+  const researchImage5 = img('resourcesResearchImage5', researchImage5Fallback);
+  const additionalKnowledgeResource = img('resourcesAdditionalKnowledge', additionalKnowledgeFallback);
+
   // Updated component with new image imports
   const faqs = [
     {

@@ -14,12 +14,13 @@ import {
   TrendingUp,
   CheckCircle
 } from "lucide-react";
-import labHeroBg from "@/assets/lab-hero-bg.jpg";
+import labHeroBgFallback from "@/assets/lab-hero-bg.jpg";
 import eloisaPhotoFallback from "@/assets/eloisa-founder.jpg";
-import missionImage from "@/assets/mission-image.jpg";
-import conditionsImage from "@/assets/conditions-treatment-image.jpg";
-import healingPotentialImage from "@/assets/healing-potential-image.jpg";
+import missionImageFallback from "@/assets/mission-image.jpg";
+import conditionsImageFallback from "@/assets/conditions-treatment-image.jpg";
+import healingPotentialImageFallback from "@/assets/healing-potential-image.jpg";
 import { getFounder, urlFor } from "@/lib/sanity";
+import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 const About = () => {
   const [founder, setFounder] = useState<any>(null);
@@ -33,6 +34,12 @@ const About = () => {
   const founderBio = founder?.bio ?? "Eloisa has cultivated exponential trust among nationwide doctors, clinics, and practitioners through her unwavering dedication and comprehensive expertise.";
   const founderBioExtended = founder?.bioExtended ?? "As a hands-on mobile clinician, Eloisa travels for Orthopedic clinics, VA groups, and athletic departments, demonstrating profound commitment to patient care and professional support.";
   const founderPhoto = founder?.photo ? urlFor(founder.photo).width(600).url() : eloisaPhotoFallback;
+
+  const { img } = useSiteMedia();
+  const labHeroBg = img('heroBackground', labHeroBgFallback);
+  const missionImage = img('aboutMissionImage', missionImageFallback);
+  const conditionsImage = img('aboutConditionsImage', conditionsImageFallback);
+  const healingPotentialImage = img('aboutHealingPotentialImage', healingPotentialImageFallback);
 
   const stats = [
     { number: "20+", label: "Years of Research", icon: Calendar },

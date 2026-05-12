@@ -1,6 +1,7 @@
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import founder from './schema/founder'
+import siteMedia from './schema/siteMedia'
 
 export default defineConfig({
   name: 'biocellrx',
@@ -9,6 +10,6 @@ export default defineConfig({
   dataset: 'production',
   plugins: [structureTool()],
   schema: {
-    types: [founder],
+    types: [founder, siteMedia],
   },
 })

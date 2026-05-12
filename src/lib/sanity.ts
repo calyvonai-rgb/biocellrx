@@ -24,3 +24,7 @@ export async function getFounder() {
     photo
   }`)
 }
+
+export async function getSiteMedia() {
+  return client.fetch(`*[_type == "siteMedia"][0]`)
+}

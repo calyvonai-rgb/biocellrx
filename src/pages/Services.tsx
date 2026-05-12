@@ -19,13 +19,21 @@ import {
   Baby,
   UserCheck
 } from "lucide-react";
-import labHeroBg from "@/assets/lab-hero-bg.jpg";
-import videoThumbnail from "@/assets/video-thumbnail.jpg";
-import mscExosomalLysate from "@/assets/msc-exosomal-lysate.png";
-import cbscCryo from "@/assets/cbsc-cryo.png";
+import labHeroBgFallback from "@/assets/lab-hero-bg.jpg";
+import videoThumbnailFallback from "@/assets/video-thumbnail.jpg";
+import mscExosomalLysateFallback from "@/assets/msc-exosomal-lysate.png";
+import cbscCryoFallback from "@/assets/cbsc-cryo.png";
 import hucFreshMsc from "/uploads/22ff32be-43e5-4063-ab26-3f4a1dbdc853.png";
+import { useSiteMedia } from "@/hooks/useSiteMedia";
 
 const Services = () => {
+  const { img, videoUrl } = useSiteMedia();
+  const labHeroBg = img('heroBackground', labHeroBgFallback);
+  const videoThumbnail = img('servicesVideoThumbnail', videoThumbnailFallback);
+  const mscExosomalLysate = img('servicesMscImage', mscExosomalLysateFallback);
+  const cbscCryo = img('servicesCbscImage', cbscCryoFallback);
+  const currentVideoUrl = videoUrl('https://player.vimeo.com/video/671229814?h=0fd935f76c&autoplay=1&loop=1');
+
   const personalizedServices = [
     {
       title: "Individualized Health Assessments",
@@ -173,7 +181,7 @@ const Services = () => {
               thumbnail={videoThumbnail}
               title="BioCellRx Explainer Video"
               description="See our breakthrough technology"
-              videoUrl="https://player.vimeo.com/video/671229814?h=0fd935f76c&autoplay=1&loop=1"
+              videoUrl={currentVideoUrl}
               duration="4:32"
               views="3.2M views"
               autoplay={true}
