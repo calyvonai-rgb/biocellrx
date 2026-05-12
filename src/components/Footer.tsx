@@ -1,6 +1,9 @@
 import { Facebook, Instagram, Linkedin, Phone, Mail } from "lucide-react";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 
 const Footer = () => {
+  const { phone, email, footerDescription, copyrightText, facebookUrl, instagramUrl, linkedinUrl } = useSiteSettings();
+
   return (
     <footer className="bg-medical-dark text-white py-12">
       <div className="container mx-auto px-6">
@@ -18,11 +21,7 @@ const Footer = () => {
             {/* Text Content wrapped around logo */}
             <div className="flex-1">
               <h3 className="text-2xl font-bold mb-3">BioCellRx</h3>
-              <p className="text-white/70 leading-relaxed">
-                Leading the future of Regenerative medicine with advanced Stem Cell 
-                therapies and premium wellness products. Transforming lives through 
-                Scientific innovation.
-              </p>
+              <p className="text-white/70 leading-relaxed">{footerDescription}</p>
             </div>
           </div>
 
@@ -46,14 +45,14 @@ const Footer = () => {
               <ul className="space-y-2 text-white/70 mb-6">
                 <li className="flex items-center">
                   <Phone className="w-4 h-4 mr-2" />
-                  <a href="tel:+18585197305" className="hover:text-accent transition-colors">
-                    (858) 519-7305
+                  <a href={`tel:${phone.replace(/\D/g,'')}`} className="hover:text-accent transition-colors">
+                    {phone}
                   </a>
                 </li>
                 <li className="flex items-center">
                   <Mail className="w-4 h-4 mr-2" />
-                  <a href="mailto:info@biocellrx.com" className="hover:text-accent transition-colors">
-                    info@biocellrx.com
+                  <a href={`mailto:${email}`} className="hover:text-accent transition-colors">
+                    {email}
                   </a>
                 </li>
               </ul>
@@ -62,8 +61,8 @@ const Footer = () => {
               <div>
                 <h4 className="font-semibold mb-3">Connect With Us</h4>
                 <div className="flex space-x-4">
-                  <a 
-                    href="https://www.facebook.com/111531213660668"
+                  <a
+                    href={facebookUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#1877F2] hover:text-[#1877F2]/80 transition-colors"
@@ -71,8 +70,8 @@ const Footer = () => {
                   >
                     <Facebook className="w-5 h-5" />
                   </a>
-                  <a 
-                    href="https://www.instagram.com/biocellrx?igshid=YmMyMTA2M2Y%3D"
+                  <a
+                    href={instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#E4405F] hover:text-[#E4405F]/80 transition-colors"
@@ -80,8 +79,8 @@ const Footer = () => {
                   >
                     <Instagram className="w-5 h-5" />
                   </a>
-                  <a 
-                    href="https://www.linkedin.com/in/eloisa-sultan/"
+                  <a
+                    href={linkedinUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#0A66C2] hover:text-[#0A66C2]/80 transition-colors"
@@ -98,9 +97,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-8 pt-8">
           <div className="text-center">
-            <p className="text-white/60 mb-4">
-              © 2025 BioCellRx. All rights reserved. | Advanced Regenerative medicine solutions.
-            </p>
+            <p className="text-white/60 mb-4">{copyrightText}</p>
             <div className="flex justify-center items-center gap-4 text-sm">
               <a 
                 href="/privacy-policy" 

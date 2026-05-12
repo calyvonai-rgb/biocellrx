@@ -28,3 +28,19 @@ export async function getFounder() {
 export async function getSiteMedia() {
   return client.fetch(`*[_type == "siteMedia"][0]`)
 }
+
+export async function getSiteSettings() {
+  return client.fetch(`*[_type == "siteSettings"][0]`)
+}
+
+export async function getHomePage() {
+  return client.fetch(`*[_type == "homePage"][0]`)
+}
+
+export async function getServicesPage() {
+  return client.fetch(`*[_type == "servicesPage"][0]`)
+}
+
+export async function getAboutPage() {
+  return client.fetch(`*[_type == "aboutPage"][0]`)
+}
