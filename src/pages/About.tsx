@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { 
+import { useState, useEffect } from "react";
+import {
   Phone,
   ArrowRight,
   Users,
@@ -14,12 +15,25 @@ import {
   CheckCircle
 } from "lucide-react";
 import labHeroBg from "@/assets/lab-hero-bg.jpg";
-import eloisaPhoto from "@/assets/eloisa-founder.jpg";
+import eloisaPhotoFallback from "@/assets/eloisa-founder.jpg";
 import missionImage from "@/assets/mission-image.jpg";
 import conditionsImage from "@/assets/conditions-treatment-image.jpg";
 import healingPotentialImage from "@/assets/healing-potential-image.jpg";
+import { getFounder, urlFor } from "@/lib/sanity";
 
 const About = () => {
+  const [founder, setFounder] = useState<any>(null);
+
+  useEffect(() => {
+    getFounder().then(setFounder).catch(() => {});
+  }, []);
+
+  const founderName = founder?.name ?? "Eloisa Sultan";
+  const founderTitle = founder?.title ?? "Medical Science Liaison";
+  const founderBio = founder?.bio ?? "Eloisa has cultivated exponential trust among nationwide doctors, clinics, and practitioners through her unwavering dedication and comprehensive expertise.";
+  const founderBioExtended = founder?.bioExtended ?? "As a hands-on mobile clinician, Eloisa travels for Orthopedic clinics, VA groups, and athletic departments, demonstrating profound commitment to patient care and professional support.";
+  const founderPhoto = founder?.photo ? urlFor(founder.photo).width(600).url() : eloisaPhotoFallback;
+
   const stats = [
     { number: "20+", label: "Years of Research", icon: Calendar },
     { number: "1000+", label: "Patients Treated", icon: Users },
@@ -62,9 +76,9 @@ const About = () => {
     }
   ];
 
-  const eloisaSkills = [
+  const eloisaSkills = founder?.skills ?? [
     "Scientific Pathology Education",
-    "Assessment Training", 
+    "Assessment Training",
     "Business Development",
     "Clinical Compliance"
   ];
@@ -179,13 +193,13 @@ const About = () => {
               <div className="p-8 lg:p-12">
                 <div className="mb-6">
                   <h3 className="text-3xl font-bold text-foreground mb-2">
-                    Eloisa Sultan
+                    {founderName}
                   </h3>
                   <p className="text-accent font-semibold text-lg mb-4">
-                    Medical Science Liaison
+                    {founderTitle}
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-6">
-                    Eloisa has cultivated exponential trust among nationwide doctors, clinics, and practitioners through her unwavering dedication and comprehensive expertise.
+                    {founderBio}
                   </p>
                 </div>
 
@@ -199,14 +213,14 @@ const About = () => {
                 </div>
 
                 <p className="text-muted-foreground leading-relaxed">
-                  As a hands-on mobile clinician, Eloisa travels for Orthopedic clinics, VA groups, and athletic departments, demonstrating profound commitment to patient care and professional support.
+                  {founderBioExtended}
                 </p>
               </div>
               
               <div className="h-full">
-                <img 
-                  src={eloisaPhoto} 
-                  alt="Eloisa Sultan - Medical Science Liaison"
+                <img
+                  src={founderPhoto}
+                  alt={`${founderName} - ${founderTitle}`}
                   className="w-full h-full object-cover"
                 />
               </div>
